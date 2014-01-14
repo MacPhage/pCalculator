@@ -1,0 +1,5 @@
+Attributions
+- - - - - -
+
+"solveRight" function-set ported from (JavaScript):
+- http://www.carbidedepot.com/formulas-trigright.asp
