@@ -16,7 +16,7 @@ using namespace std;
 
 int main()
 {
-    potentIntro(800,800);
+    //potentIntro(800,800);
     about();
     pause();
     welcome();

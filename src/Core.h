@@ -12,7 +12,7 @@
 #include <string>
 #include <math.h>
 #include "PotentCalculator_private.h"
-#include "Intro.h"
+#include "LibVenom.h"
 
 using namespace std;
 
@@ -24,7 +24,7 @@ string strA,strB,strC,strD;
 string operation,operation2,operation3;
 char pauseChar;
 bool enabled = true;
-bool isWindows = true; //CHANGE FOR YOUR OS
+bool isWindows = false; //CHANGE FOR YOUR OS
 int numberOfFunctions = 35;
 string version = VER_STRING;
 bool pass = false;
@@ -99,7 +99,8 @@ void pause()
     }
     else
     {
-        cout << "Press any key, then Enter/Return to continue ... "; cin>>pauseChar;
+        cout << "Press any key, then Enter/Return to continue ... ";
+	cin>>pauseChar;
     }
 }
 
