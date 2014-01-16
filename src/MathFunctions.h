@@ -216,6 +216,21 @@ string ClassifyTriangle(double a, double b, double c)
     return result;
 }
 
+double polyConvexInt(double sides)
+{
+	return ((sides-2)*180);
+}
+
+double polyPerimeterReg(double sideLength, double sideAmount)
+{
+	return (sideLength*sideAmount);
+}
+
+double polyAreaReg(double apothem, double sideLength, double sideAmount)
+{
+	return (0.5*apothem*polyPerimeterReg(sideLength,sideAmount));
+}
+
 
 /*/////////////////
 //               //

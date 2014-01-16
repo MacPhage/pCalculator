@@ -613,3 +613,38 @@ void menuTrigSolveRight()
         cout<<" You musta done somethin' wrong."<<endl;
     }
 }
+
+void menuPolyConvexInt()
+{
+	cout<<"Convex Polygon Sum of Interior Angles operation selected."<<endl;
+    cout<<"Example: \'6\' = 6-gon or Hexagon"<<endl;
+    cout<<"Enter the amount of sides: ";
+    cin>>inA;
+    cout<<"\n\nSum of interior angles calculated as: "<<polyConvexInt(inA)<<endl;
+    clearIns(pass);
+}
+
+void menuPolyAreaReg()
+{
+	cout<<"Regular Polygon Area operation selected."<<endl;
+    cout<<"Example: \'2 3 4\' = [apothem] [sideLength] [sideAmount]"<<endl;
+    cout<<"Enter apothem: ";
+    cin>>inA;
+    cout<<"Enter side length: ";
+    cin>>inB;
+    cout<<"Enter side amount: ";
+    cin>>inC;
+    cout<<"\n\nPolygon area calculated as: "<<polyAreaReg(inA,inB,inC)<<endl;
+}
+
+void menuPolyPerimeterReg()
+{
+	cout<<"Regular Polygon Perimeter operation selected."<<endl;
+    cout<<"Example: \'3 4\' = [sideLength] [sideAmount]"<<endl;
+    cout<<"Enter side length: ";
+    cin>>inA;
+    cout<<"Enter side amount: ";
+    cin>>inB;
+    cout<<"\n\nPolygon perimeter calculated as: "<<polyPerimeterReg(inA,inB)<<endl;
+}
+

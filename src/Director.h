@@ -17,6 +17,7 @@ void menuVolume();
 void menuClassify();
 void menuClassifyTriangle();
 void menuTrig();
+void menuPolygon();
 
 void switchOperation()
 {
@@ -94,6 +95,10 @@ void switchOperation()
         {
             menuTrig();
         }
+	else if(operation == "polygon")
+		{
+			menuPolygon();
+		}
 	//MORE CASES
 	
 	else if(operation ==  "X")
@@ -303,4 +308,28 @@ void menuTrig()
     {
         menuTrig();
     }*/
+}
+
+void menuPolygon()
+{
+	cout<<"Polygon geometry operation selected."<<endl;
+	string command;
+    cout<<"\nEnter one of the following supported operations:"<<endl;
+    cout<<"   convexInteriorAngles, areaRegular, perimeterRegular, (nothing else)"<<endl;
+    cout<<"Operation: ";
+    cin>>command;
+    cout<<"\n";
+
+    if(command == "convexInteriorAngles")
+    {
+        menuPolyConvexInt();
+    }
+    else if(command == "areaRegular")
+    {
+        menuPolyAreaReg();
+    }
+    else if(command == "perimeterRegular")
+    {
+        menuPolyPerimeterReg();
+    }
 }

@@ -43,7 +43,6 @@ void welcome()
 {
 
     cout<<"\nPotent Calculator"<<endl;
-    cout<<"CHRISTMAS 2013 UPDATE"<<endl;
 	cout<<"Version: "<<version<<endl;
     cout<<"Operating as Windows: "<<boolToString(isWindows)<<"\n"<<endl;
 	cout<<"By Austin Jackson of John H Reagan High School."<<endl;
@@ -78,6 +77,7 @@ void menu()
 	cout<<"   To classify a shape, type \'classify\' without quotes."<<endl;
 	cout<<"   To perform Pythagorean Theorem, type \'pythag\' without quotes."<<endl;
 	cout<<"   To perform Trigonometry functions, type \'trig\' without quotes."<<endl;
+	cout<<"   To perform Polygon functions, type \'polygon\' without quotes."<<endl;
 	
 	cout<<"\n   (more functions coming soon!)"<<endl;
 	
