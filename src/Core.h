@@ -12,7 +12,9 @@
 #include <string>
 #include <math.h>
 #include "PotentCalculator_private.h"
-#include "LibVenom.h"
+#include "Intro.h"
+
+const double UNDEFINED_SLOPE = 1.00001;
 
 using namespace std;
 
@@ -24,8 +26,21 @@ string strA,strB,strC,strD;
 string operation,operation2,operation3;
 char pauseChar;
 bool enabled = true;
-bool isWindows = false; //CHANGE FOR YOUR OS
-int numberOfFunctions = 35;
+bool isWindows = true;
+/*
+    If you are compiling this software for Windows, please set this to true.
+    If you are compiling this software for anything other than windows,
+    please set this to false and comment-out any undeclared functions that
+    your compiled alerts you of. These methods are likely from the
+    WinBGIm (graphics.h) library. Check if WinBGIm has been ported to your OS,
+    and try again without commenting out said methods. If you do this, remember to
+    #include <graphics.h> at the top of this Header, but keep isWindows to false.
+    WinBGIm is natively Windows only. Methods such as initwindow(), circle(),
+    and closegraph() are part of WinBGIm. A PDF manual of WinBGIm should be included
+    with this project so you can find exactly which functions to safely comment-out.
+    -Austin
+*/
+int numberOfFunctions = 39;
 string version = VER_STRING;
 bool pass = false;
 
@@ -41,19 +56,24 @@ void pause();
 
 void welcome()
 {
-
+    if(isWindows == true)
+    {
+        #include <graphics.h>
+    }
+    system("TITLE pCalculator -- Welcome");
     cout<<"\nPotent Calculator"<<endl;
 	cout<<"Version: "<<version<<endl;
     cout<<"Operating as Windows: "<<boolToString(isWindows)<<"\n"<<endl;
-	cout<<"By Austin Jackson of John H Reagan High School."<<endl;
-	cout<<"Last updated on Saturday, December 21, 2013."<<endl;
-	cout<<"\nIt is recommended that you run this at a higher resolution than the default."<<endl;
+	cout<<"Written in C++ by Austin Jackson of Reagan High School, in Houston, Texas."<<endl;
+	cout<<"Last updated on Thursday, January 23, 2013."<<endl;
+	//cout<<"\nIt is recommended that you run this at a higher resolution than the default."<<endl;
 
 	cout<<"\nThis program conducts "<<numberOfFunctions<<" different kinds \nof mathermatical and geometrical operations.\n\nTo begin, follow the instructions below.\nAll inputs ARE case-sensitive.\n"<<endl;
 }
 
 void menu()
 {
+    system("TITLE pCalculator -- Menu ");
     cout<<"\nNow showing BASIC MATH functions."<<endl;
 	cout<<"   To perform addition, type \'+\' without quotes."<<endl;
     cout<<"   To perform subtraction, type \'-\' without quotes."<<endl;
@@ -96,11 +116,11 @@ void pause()
     if(isWindows == true)
     {
         system("PAUSE");
+        closegraph();
     }
     else
     {
-        cout << "Press any key, then Enter/Return to continue ... ";
-	cin>>pauseChar;
+        cout << "Press any key, then Enter/Return to continue ... "; cin>>pauseChar;
     }
 }
 
@@ -153,21 +173,21 @@ void about()
 {
 	cout<<"+-----------------------------------------------------------------------------+"<<endl;
 	cout<<"|                          ~~ Potent Calculator ~~                            |"<<endl;
-	cout<<"| The Potent Calculator is a C++ console application made by 14 year-old      |"<<endl;
-	cout<<"| Austin Jackson, of Houston, Texas, in the United States of America. It      |"<<endl;
-	cout<<"| performs the calculation of basic operations (+,-,*,/) via the Command      |"<<endl;
-	cout<<"| Prompt (on Windows) or Terminal (on Mac OS X). It also features automatic   |"<<endl;
+	cout<<"| The Potent Calculator is a C++ console application made by high school      |"<<endl;
+	cout<<"| freshman Austin Jackson, of Houston, Texas, at the age of 15. It performs   |"<<endl;
+	cout<<"| the calculation of basic operations (+,-,*,/) via the Command Prompt        |"<<endl;
+	cout<<"| (on Windows) or Terminal (on Mac OS X). It also features automatic          |"<<endl;
 	cout<<"| calculating of such functions like exponents and square root to Geometrical |"<<endl;
 	cout<<"| distance and midpoint, and many more. It is made for the convenience of     |"<<endl;
 	cout<<"| others and is 100% open-source.                                             |"<<endl;
 	cout<<"|                                                                             |"<<endl;
-	cout<<"| ~ Find Austin Jackson at... ~                                               |"<<endl;
-	cout<<"| http://www.ruthlessphysics.com/potent/                                      |"<<endl;
-	cout<<"| http://www.reddit.com/u/MacP_                                               |"<<endl;
-	cout<<"| http://www.twitter.com/MacPhage                                             |"<<endl;
+	cout<<"| ~ Find Austin Jackson at... ~             ~ Find Potent Calculator at... ~  |"<<endl;
+	cout<<"|  ruthlessphysics.com/potent/                 srchub.org/p/pcalculator       |"<<endl;
+	cout<<"|  twitter.com/MacPhage                                                       |"<<endl;
 	cout<<"|                                                                             |"<<endl;
-	cout<<"|      SPECIAL THANKS TO THE COMP-SCI TEAM AT JOHN H REAGAN HIGH SCHOOL!      |"<<endl;
-	cout<<"|                                    <3                                       |"<<endl;
+	cout<<"|                                                                             |"<<endl;
+	cout<<"|    SPECIAL THANKS TO THE COMP-SCI & ROBOTICS TEAM AT REAGAN HIGH SCHOOL!    |"<<endl;
+	cout<<"|                               GO BULLDOGS <3                                |"<<endl;
 	cout<<"+-----------------------------------------------------------------------------+"<<endl;
 	cout<<endl;
 }

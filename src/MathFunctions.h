@@ -70,6 +70,17 @@ double Midpoint(double X1,double X2)
 }
 double SlopeDecimal(double X1,double Y1,double X2,double Y2)
 {
+    if(X2-X1 == 0)
+    {
+        if(Y2-Y1 >= 0)
+        {
+            return UNDEFINED_SLOPE;
+        }
+        else if(Y2-Y1 < 0)
+        {
+            return (-1)*UNDEFINED_SLOPE;
+        }
+    }
 	return ( (Y2-Y1)/(X2-X1) );
 }
 double SlopeFraction(double X1,double X2)
@@ -231,15 +242,166 @@ double polyAreaReg(double apothem, double sideLength, double sideAmount)
 	return (0.5*apothem*polyPerimeterReg(sideLength,sideAmount));
 }
 
+bool testedParallelogram;
+bool testedRhombus;
+bool testedRectangle;
 
-/*/////////////////
-//               //
-// TRIGONOMETRY  //
-//               //
-*//////////////////
-/*
-double Trigonometry()
+
+bool isPerpendicular(double slope1,double slope2)
 {
-	//math
+    if(slope1 == (-1)/slope2)
+    {
+        return true;
+    }
+    else if(slope2 == (-1)/slope1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
-*/
+
+bool isParallelogram(double X1, double Y1,double X2, double Y2,double X3, double Y3,double X4, double Y4)
+{
+	double slopeAB = SlopeDecimal(X1,Y1,X2,Y2);
+	double slopeBC = SlopeDecimal(X2,Y2,X3,Y3);
+	double slopeCD = SlopeDecimal(X3,Y3,X4,Y4);
+	double slopeDA = SlopeDecimal(X4,Y4,X1,Y1);
+	
+	double slopeAC = SlopeDecimal(X1,Y1,X3,Y3);
+	double slopeBD = SlopeDecimal(X2,Y2,X4,Y4);
+	
+	//I NEED TO CAST double'S AS string'S, BUT HOW?
+	
+	if( (slopeAB == slopeCD) && (slopeBC == slopeDA) && (slopeAB != slopeBC) && (slopeBC != slopeCD) && (slopeCD != slopeDA) && (slopeDA != slopeAB))
+	{
+        testedParallelogram = true;
+		return true;
+	}
+	else
+	{
+        testedParallelogram = false;
+		return false;
+	}
+}
+
+bool isRhombus(double X1, double Y1,double X2, double Y2,double X3, double Y3,double X4, double Y4)
+{
+    bool perpendicularDiagonals;
+    bool congruentSides;
+    bool bisectingDiagonals;
+    bool willReturn;
+
+	double slopeAC = SlopeDecimal(X1,Y1,X3,Y3);
+	double slopeBD = SlopeDecimal(X2,Y2,X4,Y4);
+
+    if(isPerpendicular(slopeAC,slopeBD))
+    {
+        perpendicularDiagonals = true;
+    }
+    else
+    {
+        perpendicularDiagonals = false;
+    }
+    
+    if( DistanceSquareroot(X1,Y1,X2,Y2) == DistanceSquareroot(X2,Y2,X3,Y3) && DistanceSquareroot(X3,Y3,X4,Y4) == DistanceSquareroot(X4,Y4,X1,Y1))
+    {
+        congruentSides = true;
+    }
+    else
+    {
+        congruentSides = false;
+    }
+    
+    if(Midpoint(X1,X3) == Midpoint(X2,X4) && Midpoint(Y1,Y3) == Midpoint(Y2,Y4))
+    {
+        bisectingDiagonals = true;
+    }
+    else
+    {
+        bisectingDiagonals = false;
+    }
+    
+    if(perpendicularDiagonals == true && congruentSides == true && bisectingDiagonals == true && isParallelogram(X1,Y1,X2,Y2,X3,Y3,X4,Y4) == true)
+    {
+        cout<<"\n|-> perpendicularDiagonals: "<<boolToString(perpendicularDiagonals)<<endl;
+        cout<<"|-> congruentSides: "<<boolToString(congruentSides)<<endl;
+        cout<<"|-> bisectingDiagonals: "<<boolToString(bisectingDiagonals)<<endl;
+        testedRhombus = true;
+        return true;
+    }
+    else
+    {
+        cout<<"\n|-> perpendicularDiagonals: "<<boolToString(perpendicularDiagonals)<<endl;
+        cout<<"|-> congruentSides: "<<boolToString(congruentSides)<<endl;
+        cout<<"|-> bisectingDiagonals: "<<boolToString(bisectingDiagonals)<<endl;
+        testedRhombus = false;
+        return false;
+    }
+}
+
+bool isRectangle(double X1, double Y1,double X2, double Y2,double X3, double Y3,double X4, double Y4)
+{
+    double slopeAB = SlopeDecimal(X1,Y1,X2,Y2);
+	double slopeBC = SlopeDecimal(X2,Y2,X3,Y3);
+	double slopeCD = SlopeDecimal(X3,Y3,X4,Y4);
+	double slopeDA = SlopeDecimal(X4,Y4,X1,Y1);
+
+    bool perpendicular_AB_BC = isPerpendicular(slopeAB,slopeBC);
+    bool perpendicular_BC_CD = isPerpendicular(slopeBC,slopeCD);
+    bool perpendicular_CD_DA = isPerpendicular(slopeCD,slopeDA);
+    bool perpendicular_DA_AB = isPerpendicular(slopeDA,slopeAB);
+    
+    bool fourRightAngles;
+    bool congruentDiagonals;
+    
+    double midpointX = Midpoint(X1,X3); //Estimated
+    double midpointY = Midpoint(Y1,Y3); //Estimated
+    
+    if(perpendicular_AB_BC == true && perpendicular_BC_CD == true && perpendicular_CD_DA == true && perpendicular_DA_AB == true)
+    {
+        fourRightAngles = true;
+    }
+    else
+    {
+        fourRightAngles = false;
+    }
+    
+    if(DistanceSquareroot(X1,Y1,midpointX,midpointY) == DistanceSquareroot(X2,Y2,midpointX,midpointY) && DistanceSquareroot(X3,Y3,midpointX,midpointY) == DistanceSquareroot(X4,Y4,midpointX,midpointY))
+    {
+        congruentDiagonals = true;
+    }
+    else
+    {
+        congruentDiagonals = false;
+    }
+    
+    if(congruentDiagonals == true && fourRightAngles == true && isParallelogram(X1,Y1,X2,Y2,X3,Y3,X4,Y4) == true)
+    {
+        cout<<"\n|-> congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
+        cout<<"|-> fourRightAngles: "<<boolToString(fourRightAngles)<<endl;
+        testedRectangle = true;
+        return true;
+    }
+    else
+    {
+        cout<<"\n|-> congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
+        cout<<"|-> fourRightAngles: "<<boolToString(fourRightAngles)<<endl;
+        testedRectangle = false;
+        return false;
+    }
+}
+
+bool isSquare(double X1, double Y1,double X2, double Y2,double X3, double Y3,double X4, double Y4)
+{
+    if(testedRhombus == true && testedRectangle == true && testedParallelogram == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

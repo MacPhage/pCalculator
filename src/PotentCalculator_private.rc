@@ -8,8 +8,8 @@
 // TO CHANGE VERSION INFORMATION, EDIT PROJECT OPTIONS...
 //
 1 VERSIONINFO
-FILEVERSION 0,7,2,189
-PRODUCTVERSION 0,7,2,189
+FILEVERSION 0,7,3,248
+PRODUCTVERSION 0,7,3,248
 FILETYPE VFT_APP
 {
   BLOCK "StringFileInfo"
@@ -18,11 +18,11 @@ FILETYPE VFT_APP
 		 {
 			 VALUE "CompanyName", "Potent"
 			 VALUE "FileVersion", ""
-			 VALUE "FileDescription", "Developed using the Dev-C++ IDE"
+			 VALUE "FileDescription", ""
 			 VALUE "InternalName", ""
 			 VALUE "LegalCopyright", ""
 			 VALUE "LegalTrademarks", ""
-			 VALUE "OriginalFilename", ""
+			 VALUE "OriginalFilename", "srchub.org/p/pcalculator"
 			 VALUE "ProductName", "Potent Calculator"
 			 VALUE "ProductVersion", ""
 		 }

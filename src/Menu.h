@@ -406,6 +406,71 @@ void menuClassifyTriangle()
     clearIns(pass);
 }
 
+void menuClassifyQuadrilateral()
+{
+    cout<<"\nClassification (Quadrilateral) selected."<<endl;
+    cout<<"Example: \'0 3 2 6 4 3 2 0 \' = points A(0,3) B(2,6) C(4,3) D(2,0)"<<endl;
+    cout<<"Enter the coordinate points of the Quadralateral seperated by spaces, as shown in the example, when prompted below."<<endl;
+    cout<<"The points *NEED* to be in order around the figure. "<<endl;
+    cout<<"Enter coordinate points now: ";
+    
+	cin>>inA;
+	cout<<"Point A, X value (X1).";
+	cin>>inB;
+	cout<<"\nPoint A, Y value (Y1). ";
+	cin>>inC;
+	cout<<"\nPoint B, X value (X2). ";
+	cin>>inD;
+	cout<<"\nPoint B, Y value (Y2). ";
+	cin>>inE;
+	cout<<"\nPoint C, X value (X3). ";
+	cin>>inF;
+	cout<<"\nPoint C, Y value (Y3). ";
+	cin>>inG;
+	cout<<"\nPoint D, X value (X4). ";
+	cin>>inH;
+	cout<<"\nPoint D, Y value (Y4). ";
+	
+	double slopeAB = SlopeDecimal(inA,inB,inC,inD);
+	double slopeBC = SlopeDecimal(inC,inD,inE,inF);
+	double slopeCD = SlopeDecimal(inE,inF,inG,inH);
+	double slopeDA = SlopeDecimal(inG,inH,inA,inB);
+	
+	cout<<"\n\nTHIS DOESN'T CURRENTLY WORK WITH UNDEFINED SLOPES, AS THEY DIVIDE BY 0 AND GIVE AN ERROR"<<endl;
+	cout<<"Slope of point A & B = "<<slopeAB<<endl;
+	cout<<"Slope of point B & C = "<<slopeBC<<endl;
+	cout<<"Slope of point C & D = "<<slopeCD<<endl;
+	cout<<"Slope of point D & A = "<<slopeDA<<endl;
+	
+	cout<<"\nParallelogram: "<<boolToString(isParallelogram(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
+	cout<<"Rhombus: "<<boolToString(isRhombus(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
+	cout<<"Rectangle: "<<boolToString(isRectangle(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
+	cout<<"Square: "<<boolToString(isSquare(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
+	cout<<"Trapezoid: "<<"n/a"<<endl;
+	cout<<"Kite: "<<"n/a"<<endl;
+	
+    if(false)
+    {
+        initwindow(500,500,"Graph");
+        outtextxy((int)inA*50,(int)inB*50-17,"A");
+        circle((int)inA*50,(int)inB*50,2);
+        outtextxy((int)inC*50,(int)inD*50-17,"B");
+        circle((int)inC*50,(int)inD*50,2);
+        outtextxy((int)inE*50,(int)inF*50-17,"C");
+        circle((int)inE*50,(int)inF*50,2);
+        outtextxy((int)inG*50,(int)inH*50-17,"D");
+        circle((int)inG*50,(int)inH*50,2);
+        cout<<"\nA graph of the points has been drawn."<<endl;
+        cout<<"This graphing functionality is in beta so there may be issues."<<endl;
+        pause();
+    }
+	
+	
+	
+	
+    clearIns(pass);
+}
+
 void menuTrigTan()
 {
 	cout<<"Tangent (Trigonometry) selected."<<endl;

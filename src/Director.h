@@ -251,7 +251,7 @@ void menuClassify()
 {
     string shape;
     cout<<"Enter one of the following supported shapes:"<<endl;
-    cout<<"   triangle, (nothing else)"<<endl;
+    cout<<"   triangle, quadrilateral, (nothing else)"<<endl;
     cout<<"Shape: ";
     cin>>shape;
 
@@ -259,10 +259,10 @@ void menuClassify()
     {
         menuClassifyTriangle();
     }
-    /*else if(shape == "")
+    else if(shape == "quadrilateral")
     {
-        menuClassifyShape();
-    }*/
+        menuClassifyQuadrilateral();
+    }
 }
 
 void menuTrig()
@@ -271,7 +271,7 @@ void menuTrig()
 	drawTriangle();
 	string command;
     cout<<"\nEnter one of the following supported operations:"<<endl;
-    cout<<"   tan, cos, sin, aTan, aCos, aSin, solveright, (nothing else)"<<endl;
+    cout<<"   tan, cos, sin, aTan, aCos, aSin, (nothing else)"<<endl;
     cout<<"Operation: ";
     cin>>command;
     cout<<"\n";
@@ -300,10 +300,10 @@ void menuTrig()
     {
         menuTrigASin();
     }
-    else if(command == "solveright")
+    /*else if(command == "solveright")
     {
         menuTrigSolveRight();
-    }
+    }*/
     /*else if(command == "")
     {
         menuTrig();

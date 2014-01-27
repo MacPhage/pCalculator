@@ -40,14 +40,20 @@ Version 7:
 	*Added arc cosine (cos^-1) function
 	*Added arc sine (sin^-1) function
 	*Added right triangle solver [BETA/NOT WORKING AT ALL CORRECTLY]
-	PATCH 1:
+  PATCH 1:
 	*Fix for aTan, aCos, and aSin commands returning tan, cos, and sin values
+  PATCH 2:
+	*Added convex sum of interior angles function
+	*Added area of a regular polygon  function
+	*Added perimeter of a regular polygon function
+  PATCH 3:
+	*Added quadrilateral classification function
 
 Version 6:
 	* Added internal Director system for repetitive operations ("Director.h")
 	* Commands now accessible by strings instead of characters ("sqrt 5" instead of "S 5")
-	* Added internal multi-command system that supports up to 3 commands simultaneously, sorta.
-	* (NI) Added pretty ASCII art on welcome screen
+	* Added internal multi-command system that supports up to 3 commands simultaneously (under each other), sorta.
+	* (NI) Added kinda pretty ASCII art on welcome screen
 	* Cleaned up command list screen
 	* Added version information to EXE file
 	* Added classify function

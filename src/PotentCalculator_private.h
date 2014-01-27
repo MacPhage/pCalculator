@@ -5,18 +5,18 @@
 #define POTENTCALCULATOR_PRIVATE_H
 
 /* VERSION DEFINITIONS */
-#define VER_STRING	"0.7.2.189"
+#define VER_STRING	"0.7.3.248"
 #define VER_MAJOR	0
 #define VER_MINOR	7
-#define VER_RELEASE	2
-#define VER_BUILD	189
+#define VER_RELEASE	3
+#define VER_BUILD	248
 #define COMPANY_NAME	"Potent"
 #define FILE_VERSION	""
-#define FILE_DESCRIPTION	"Developed using the Dev-C++ IDE"
+#define FILE_DESCRIPTION	""
 #define INTERNAL_NAME	""
 #define LEGAL_COPYRIGHT	""
 #define LEGAL_TRADEMARKS	""
-#define ORIGINAL_FILENAME	""
+#define ORIGINAL_FILENAME	"srchub.org/p/pcalculator"
 #define PRODUCT_NAME	"Potent Calculator"
 #define PRODUCT_VERSION	""
 
