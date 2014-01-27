@@ -451,6 +451,7 @@ void menuClassifyQuadrilateral()
 	
     if(false)
     {
+	/*
         initwindow(500,500,"Graph");
         outtextxy((int)inA*50,(int)inB*50-17,"A");
         circle((int)inA*50,(int)inB*50,2);
@@ -463,6 +464,7 @@ void menuClassifyQuadrilateral()
         cout<<"\nA graph of the points has been drawn."<<endl;
         cout<<"This graphing functionality is in beta so there may be issues."<<endl;
         pause();
+	*/
     }
 	
 	

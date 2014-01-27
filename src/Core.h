@@ -12,7 +12,7 @@
 #include <string>
 #include <math.h>
 #include "PotentCalculator_private.h"
-#include "Intro.h"
+#include "LibVenom.h"
 
 const double UNDEFINED_SLOPE = 1.00001;
 
@@ -26,7 +26,7 @@ string strA,strB,strC,strD;
 string operation,operation2,operation3;
 char pauseChar;
 bool enabled = true;
-bool isWindows = true;
+bool isWindows = false;
 /*
     If you are compiling this software for Windows, please set this to true.
     If you are compiling this software for anything other than windows,
@@ -58,9 +58,9 @@ void welcome()
 {
     if(isWindows == true)
     {
-        #include <graphics.h>
+        //#include <graphics.h>
     }
-    system("TITLE pCalculator -- Welcome");
+    //system("TITLE pCalculator -- Welcome");
     cout<<"\nPotent Calculator"<<endl;
 	cout<<"Version: "<<version<<endl;
     cout<<"Operating as Windows: "<<boolToString(isWindows)<<"\n"<<endl;
@@ -73,7 +73,7 @@ void welcome()
 
 void menu()
 {
-    system("TITLE pCalculator -- Menu ");
+    //system("TITLE pCalculator -- Menu ");
     cout<<"\nNow showing BASIC MATH functions."<<endl;
 	cout<<"   To perform addition, type \'+\' without quotes."<<endl;
     cout<<"   To perform subtraction, type \'-\' without quotes."<<endl;
@@ -116,7 +116,7 @@ void pause()
     if(isWindows == true)
     {
         system("PAUSE");
-        closegraph();
+        //closegraph();
     }
     else
     {

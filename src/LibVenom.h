@@ -12,14 +12,14 @@
 #include <stdio.h>
 #include <cstdlib>
 #include <stdlib.h>
-#include <conio.h>
+//#include <conio.h>
 
 using namespace std;
 
 void pauseConsole()
 {
     cout<<"Press any key to continue . . ."<<endl;
-	getch();
+	//getch();
 }
 
 string boolToString(bool A)
