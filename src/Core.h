@@ -23,7 +23,7 @@ string strA,strB,strC,strD;
 string operation,operation2,operation3;
 char pauseChar;
 int appstate = 0;
-bool isWindows = true;
+bool isWindows = false;
 /*
     If you are compiling this software for Windows, please set this to true.
     If you are compiling this software for anything other than windows,
