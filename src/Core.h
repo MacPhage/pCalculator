@@ -23,7 +23,7 @@ string strA,strB,strC,strD;
 string operation,operation2,operation3;
 char pauseChar;
 int appstate = 0;
-bool isWindows = true;
+bool isWindows = false;
 /*
     If you are compiling this software for Windows, please set this to true.
     If you are compiling this software for anything other than windows,
@@ -95,6 +95,7 @@ void menu()
 	cout<<"   To perform Pythagorean Theorem, type \'pythag\' without quotes."<<endl;
 	cout<<"   To perform Trigonometry functions, type \'trig\' without quotes."<<endl;
 	cout<<"   To perform Polygon functions, type \'polygon\' without quotes."<<endl;
+	cout<<"   To test if something is true or false, type \'tf\' without quotes."<<endl;
 	
 	cout<<"\n   (more functions coming soon!)"<<endl;
 	
