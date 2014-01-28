@@ -7,7 +7,7 @@
 //
 //
 
-#include "TrigonometryFunctions.h"
+#include "Core.h"
 
 using namespace std;
 
@@ -59,11 +59,7 @@ double DistanceSquareroot(double X1,double Y1,double X2,double Y2)
 {
 	return ( pow(X2-X1,2) + pow(Y2-Y1, 2) );
 }
-double DistanceRadical(double X1,double Y1,double X2,double Y2)
-{
-	//return ( pow(X2-X1,2) + pow(Y2-Y1, 2) );
-    return 1337;
-}
+
 double Midpoint(double X1,double X2)
 {
 	return ( (X1+X2)/2 );

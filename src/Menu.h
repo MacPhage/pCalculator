@@ -15,6 +15,19 @@
 
 using namespace std;
 
+void menuAddition();
+void menuSubtraction();
+void menuMultiplication();
+void menuDivision();
+void menuExponents();
+void menuSquareroot();
+void menuFactorials();
+void menuDistance();
+void menuMidpoint();
+void menuSlope();
+void menuCircumference();
+void menuRadius();
+
 void menuAddition()
 {
 	cout<<"Addition selected."<<endl;
@@ -24,7 +37,7 @@ void menuAddition()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<add(inA,inB)<<endl;
-	clearIns(false);
+	clearIns();
 }
 
 void menuSubtraction()
@@ -36,7 +49,7 @@ void menuSubtraction()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<subtract(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 
 void menuMultiplication()
@@ -48,7 +61,7 @@ void menuMultiplication()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<multiply(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 
 void menuDivision()
@@ -60,7 +73,7 @@ void menuDivision()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<divide(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 
 void menuExponents()
@@ -72,7 +85,7 @@ void menuExponents()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<exponents(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 
 void menuSquareroot()
@@ -82,7 +95,7 @@ void menuSquareroot()
 	cout<<"Enter what you would like to find the Squareroot of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<squareroot(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuFactorials()
 {
@@ -92,7 +105,7 @@ void menuFactorials()
 	cin>>inA;
 	inB = 1;
 	cout<<"\nAnswer: "<<factorials(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuDistance()
 {
@@ -110,7 +123,7 @@ void menuDistance()
 	cout<<"\nDecimal form: "<<Distance(inA,inB,inC,inD)<<endl;
 	cout<<"Squareroot form: "<<DistanceSquareroot(inA,inB,inC,inD)<<endl;
 	cout<<"Radical form: "<<"(coming soon!)"<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuMidpoint()
 {
@@ -150,7 +163,7 @@ void menuSlope()
     }
 	cout<<"Fractional form: "<<"y = "<<SlopeFraction(inB,inD)<<"/"<<SlopeFraction(inA,inC)<<"x"<<endl;
 	
-	clearIns(pass);
+	clearIns();
 }
 void menuCircumference()
 {
@@ -159,7 +172,7 @@ void menuCircumference()
 	cout<<"Enter what you would like to find the Circumference of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<Circumference(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuRadius()
 {
@@ -168,7 +181,7 @@ void menuRadius()
 	cout<<"Enter what you would like to find the Radius of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<Radius(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 
 
@@ -181,7 +194,7 @@ void menuAreaTriangle()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<AreaTriangle(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuAreaParallelogram()
 {
@@ -192,7 +205,7 @@ void menuAreaParallelogram()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<AreaParallelogram(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuAreaRhombus()
 {
@@ -203,7 +216,7 @@ void menuAreaRhombus()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<AreaRhombus(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuAreaTrapezoid()
 {
@@ -216,7 +229,7 @@ void menuAreaTrapezoid()
 	cout<<"Received.\n";
 	cin>>inC;
 	cout<<"\nAnswer: "<<AreaTrapezoid(inA,inB,inC)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuAreaCircle()
 {
@@ -225,7 +238,7 @@ void menuAreaCircle()
 	cout<<"Enter what you would like to find the Area of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<AreaCircle(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuSaCube()
 {
@@ -234,7 +247,7 @@ void menuSaCube()
 	cout<<"Enter what you would like to find the Surface Area of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<SaCube(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuSaRectPrism()
 {
@@ -247,7 +260,7 @@ void menuSaRectPrism()
 	cout<<"Received.\n";
 	cin>>inC;
 	cout<<"\nAnswer: "<<SaRectPrism(inA,inB,inC)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuSaSphere()
 {
@@ -256,7 +269,7 @@ void menuSaSphere()
 	cout<<"Enter what you would like to find the Surface Area of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<SaSphere(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuSaCylinder()
 {
@@ -267,7 +280,7 @@ void menuSaCylinder()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<SaCylinder(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuVolumeCube()
 {
@@ -276,7 +289,7 @@ void menuVolumeCube()
 	cout<<"Enter what you would like to find the Volume of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<VolumeCube(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuVolumeRectPrism()
 {
@@ -289,7 +302,7 @@ void menuVolumeRectPrism()
 	cout<<"Received.\n";
 	cin>>inC;
 	cout<<"\nAnswer: "<<VolumeRectPrism(inA,inB,inC)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuVolumeCylinder()
 {
@@ -300,7 +313,7 @@ void menuVolumeCylinder()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<VolumeCylinder(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuVolumeCone()
 {
@@ -311,7 +324,7 @@ void menuVolumeCone()
 	cout<<"Received.\n";
 	cin>>inB;
 	cout<<"\nAnswer: "<<VolumeCone(inA,inB)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuVolumeSphere()
 {
@@ -320,7 +333,7 @@ void menuVolumeSphere()
 	cout<<"Enter what you would like to find the Volume of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<VolumeSphere(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuClassifyTriangleLengths()
 {
@@ -334,7 +347,7 @@ void menuClassifyTriangleLengths()
     cout<<"Leg C: ";
     cin>>inC;
     cout<<"\nTriangle Classified as: "<<ClassifyTriangle(inA,inB,inC)<<endl;
-    clearIns(pass);
+    clearIns();
 }
 void menuClassifyTrianglePoints()
 {
@@ -376,7 +389,7 @@ void menuClassifyTrianglePoints()
 	{
 		cout<<"Something was invalid."<<endl;
 	}
-    clearIns(pass);
+    clearIns();
 }
 void menuPythagoreanTheorem()
 {
@@ -411,7 +424,7 @@ void menuClassifyTriangle()
 	{
 		cout<<"That was an invalid answer. Returning to menu."<<endl;
 	}
-    clearIns(pass);
+    clearIns();
 }
 
 void menuClassifyQuadrilateral()
@@ -483,7 +496,7 @@ void menuClassifyQuadrilateral()
 	
 	
 	
-    clearIns(pass);
+    clearIns();
 }
 
 void menuTrigTan()
@@ -493,7 +506,7 @@ void menuTrigTan()
 	cout<<"Enter what you would like to find the Tangent of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<tan(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 
 void menuTrigCos()
@@ -503,7 +516,7 @@ void menuTrigCos()
 	cout<<"Enter what you would like to find the Cosine of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<cos(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 
 void menuTrigSin()
@@ -513,7 +526,7 @@ void menuTrigSin()
 	cout<<"Enter what you would like to find the Sine of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<sin(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 void menuTrigATan()
 {
@@ -522,7 +535,7 @@ void menuTrigATan()
 	cout<<"Enter what you would like to find the Tangent of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<atan(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 
 void menuTrigACos()
@@ -532,7 +545,7 @@ void menuTrigACos()
 	cout<<"Enter what you would like to find the Cosine of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<acos(inA)<<endl;
-	clearIns(pass);
+	clearIns();
 }
 
 void menuTrigASin()
@@ -542,156 +555,7 @@ void menuTrigASin()
 	cout<<"Enter what you would like to find the Sine of:"<<endl;
 	cin>>inA;
 	cout<<"\nAnswer: "<<asin(inA)<<endl;
-	clearIns(pass);
-}
-void menuTrigSolveRight()
-{
-    double trigSideA = 0;
-    double trigSideB = 0;
-    double trigSideC = 0;
-    double trigAngleA = 0;
-    double trigAngleB = 0;
-    bool calculationSuccess = false;
-    bool validated = false;
-    int loopTime = 0;
-
-	cout<<"Right triangle solving selected. (BETA)"<<endl;
-	cout<<"Example: \'a 0 b 6 c 0 A 28 B 0\' for: side a = ?, b = 6, c = ?, A = 28, B = ?"<<endl;
-	cout<<"Enter what side followed by its length in relation to the graphic above: "<<endl;
-	cin>>chA;
-    cin>>inA;
-	cout<<"Enter what side followed by its length in relation to the graphic above: "<<endl;
-    cin>>chB;
-    cin>>inB;
-    cout<<"Enter what side followed by its length in relation to the graphic above: "<<endl;
-    cin>>chC;
-    cin>>inC;
-    cout<<"Enter what angle followed by its length in relation to the graphic above: "<<endl;
-    cin>>chD;
-    cin>>inD;
-    cout<<"Enter what angle followed by its length in relation to the graphic above: "<<endl;
-    cin>>chE;
-    cin>>inE;
-    
-    cout<<"\nchA = "<<chA<<endl;
-    cout<<"inA = "<<inA<<endl;
-    cout<<"chB = "<<chB<<endl;
-    cout<<"inB = "<<inB<<endl;
-    cout<<"chC = "<<chC<<endl;
-    cout<<"inC = "<<inC<<endl;
-    cout<<"chD = "<<chD<<endl;
-    cout<<"inD = "<<inD<<endl;
-    cout<<"chE = "<<chE<<endl;
-    cout<<"inE = "<<inE<<endl;
-    
-    cout<<"\nCalculating";
-    //Assign values to cooresponding double
-    if(chA == 'a')
-    {
-        result[0] = inA;
-    }
-    else if(chA == 'b')
-    {
-        result[1] = inA;
-    }
-    else if(chA == 'c')
-    {
-        result[2] = inA;
-    }
-    
-    if(chB == 'a')
-    {
-        result[0] = inB;
-    }
-    else if(chB == 'b')
-    {
-        result[1] = inB;
-    }
-    else if(chB == 'c')
-    {
-        result[2] = inB;
-    }
-    
-    if(chC == 'a')
-    {
-        result[0] = inC;
-    }
-    else if(chC == 'b')
-    {
-        result[1] = inC;
-    }
-    else if(chC == 'c')
-    {
-        result[2] = inC;
-    }
-    
-    if(chD == 'A')
-    {
-        result[3] = inD;
-    }
-    else if(chD == 'B')
-    {
-        result[4] = inD;
-    }
-    
-    if(chE == 'A')
-    {
-        result[3] = inE;
-    }
-    else if(chE == 'B')
-    {
-        result[4] = inE;
-    }
-    //Calculate what we don't have, until we have it
-    while(calculationSuccess == false && validated == false && loopTime < 10)
-    {
-        cout<<".";
-        //If everything is calculated, end the loop
-        if(result[0] > 0 && result[1] > 0 && result[2] > 0 && result[3] > 0 && result[4] > 0)
-        {
-            calculationSuccess = true;
-            
-            if(calculationSuccess == true) //If the loop is ended, return the answers to the user
-            {
-                validated = solveRight_validate(result[0],result[1],result[2],result[3],result[4]);
-                cout<<" Done."<<endl;
-                cout<<"Validated = "<<validated<<endl;
-                cout<<"Side a = "<<result[0]<<endl;
-                cout<<"Side b = "<<result[1]<<endl;
-                cout<<"Side c = "<<result[2]<<endl;
-                cout<<"Angle A = "<<result[3]<<endl;
-                cout<<"Angle B = "<<result[4]<<endl;
-            }
-        }
-        //Calculate the values, if they don't have one
-        if(result[0] == 0)
-        {
-            solveRight_solveForSides();
-        }
-        else if(result[1] == 0)
-        {
-            solveRight_solveForSides();
-        }
-        else if(result[2] == 0)
-        {
-            solveRight_solveForSides();
-        }
-        else if(result[3] == 0)
-        {
-            solveRight_solveForAngles();
-        }
-        else if(result[4] == 0)
-        {
-            solveRight_solveForAngles();
-        }
-        loopTime++; //Add 1 to the loopTime
-    }
-    //If the program loops more than 10 times, end it and display an error
-    if(loopTime >= 10)
-    {
-        cout<<" Error. The calculation looped more than 10 times."<<endl;
-        cout<<" You musta done somethin' wrong."<<endl;
-    }
+	clearIns();
 }
 
 void menuPolyConvexInt()
@@ -701,7 +565,7 @@ void menuPolyConvexInt()
     cout<<"Enter the amount of sides: ";
     cin>>inA;
     cout<<"\n\nSum of interior angles calculated as: "<<polyConvexInt(inA)<<endl;
-    clearIns(pass);
+    clearIns();
 }
 
 void menuPolyAreaReg()

@@ -21,18 +21,18 @@ int main()
     pause();
     welcome();
 	pause();
-	while(enabled == true)
+	while(appstate == 0)
 	{		
 		menu();
 		switchOperation();
-		if(enabled == true)
+		if(appstate == 0)
 		{
-            clearIns(pass);
+            clearIns();
             pause();
 		}
 	}
-	if(enabled == false)
+	if(appstate != 0)
 	{
-		exit();
+		return appstate;
 	}
 }

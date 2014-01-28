@@ -14,18 +14,15 @@
 #include "PotentCalculator_private.h"
 #include "LibVenom.h"
 
-const double UNDEFINED_SLOPE = 1.00001;
-
 using namespace std;
 
 double inA,inB,inC,inD,inE,inF,inG,inH;
-double result[7];
 char chA,chB,chC,chD,chE,chF,chG,chH;
 int iA,iB,iC,iD;
 string strA,strB,strC,strD;
 string operation,operation2,operation3;
 char pauseChar;
-bool enabled = true;
+int appstate = 0;
 bool isWindows = true;
 /*
     If you are compiling this software for Windows, please set this to true.
@@ -40,35 +37,35 @@ bool isWindows = true;
     with this project so you can find exactly which functions to safely comment-out.
     -Austin
 */
-int numberOfFunctions = 39;
-string version = VER_STRING;
-bool pass = false;
+const double pi = 3.14159265;
 
-char greek = '\1';
-char chTheta = greek - 24;
-char chPi = greek - 30;
-char chBeta = greek - 32;
-char chAlpha = greek - 33;
-char chDegree = greek - 9;
-
-
+void welcome();
+void menu();
 void pause();
+void clearIns();
+void about();
+void howToUse();
+void config();
+void derp();
+void art();
+void chartest(int B, int C);
+void color(string colorID);
+void disco(int duration, int mode);
+void clearScreen();
+void matrix();
+
 
 void welcome()
 {
-    if(isWindows == true)
-    {
-        //#include <graphics.h>
-    }
-    //system("TITLE pCalculator -- Welcome");
+    
     cout<<"\nPotent Calculator"<<endl;
-	cout<<"Version: "<<version<<endl;
+	cout<<"Version: "<<VER_STRING<<endl;
     cout<<"Operating as Windows: "<<boolToString(isWindows)<<"\n"<<endl;
 	cout<<"Written in C++ by Austin Jackson of Reagan High School, in Houston, Texas."<<endl;
 	cout<<"Last updated on Thursday, January 23, 2013."<<endl;
 	//cout<<"\nIt is recommended that you run this at a higher resolution than the default."<<endl;
 
-	cout<<"\nThis program conducts "<<numberOfFunctions<<" different kinds \nof mathermatical and geometrical operations.\n\nTo begin, follow the instructions below.\nAll inputs ARE case-sensitive.\n"<<endl;
+	cout<<"\nThis program conducts many different kinds \nof mathermatical and geometrical operations.\n\nTo begin, follow the instructions below.\nAll inputs ARE case-sensitive.\n"<<endl;
 }
 
 void menu()
@@ -106,11 +103,6 @@ void menu()
 	cout<<"To learn how to use this program, type \'?\' or \'help\' without quotes."<<endl;
 }
 
-int exit()
-{
-	return 0;
-}
-
 void pause()
 {
     if(isWindows == true)
@@ -124,49 +116,32 @@ void pause()
     }
 }
 
-void clearIns(bool bypass)
+void clearIns()
 {
-	//cout<<"\nClearing inputs...";
-	if(bypass == false)
-	{
-		inA = 0;
-		inB = 0;
-		inC = 0;
-		inD = 0;
-		inE = 0;
-		inF = 0;
-		inG = 0;
-		inH = 0;
-		operation = "";
-		operation2 = "";
-		operation3 = "";
-	    chA = '0';
-	    chB = '0';
- 	    chC = '0';
-	    chD = '0';
-	    chE = '0';
-	    chF = '0';
- 	    chG = '0';
-	    chH = '0';
-	    iA = 0;
-	    iB = 0;
-	    iC = 0;
-	    iD = 0;
-    	pauseChar = '0';
-    	result[0] = 0;
-    	result[1] = 0;
-    	result[2] = 0;
-    	result[3] = 0;
-    	result[4] = 0;
-    	result[5] = 0;
-    	result[6] = 0;
-    	result[7] = 0;
-	}
-	else
-	{
-        bypass == false;
-	}
-	//cout<<"Done."<<endl;
+	inA = 0;
+	inB = 0;
+	inC = 0;
+	inD = 0;
+	inE = 0;
+	inF = 0;
+	inG = 0;
+	inH = 0;
+	operation = "";
+	operation2 = "";
+	operation3 = "";
+    chA = '0';
+    chB = '0';
+    chC = '0';
+    chD = '0';
+    chE = '0';
+    chF = '0';
+    chG = '0';
+    chH = '0';
+    iA = 0;
+    iB = 0;
+    iC = 0;
+    iD = 0;
+	pauseChar = '0';
 }
 
 void about()
@@ -267,7 +242,7 @@ void chartest(int B, int C)
         intA++;
         B--;
     }
-    clearIns(pass);
+    clearIns();
 }
 void color(string colorID)
 {
@@ -356,30 +331,4 @@ void matrix()
 	cout<<"\ninput password: ";
 	cin>>password;
 	cout<<"\n\nwelcome to the matrix, "<<username<<"."<<endl;
-}
-void drawTriangle()
-{
-   	cout<<"                                "<<endl;
-	cout<<"                                "<<endl;
-	cout<<"         |\\                     "<<endl;
-	cout<<"         |B \\                   "<<endl;
-	cout<<"         |    \\                 "<<endl;
-	cout<<"         |      \\               "<<endl;
-	cout<<"         |        \\    c        "<<endl;
-	cout<<"      a  |          \\           "<<endl;
-	cout<<"         |            \\         "<<endl;
-	cout<<"         |___           \\       "<<endl;
-	cout<<"         |   |            \\     "<<endl;
-	cout<<"         |___|____________A_\\   "<<endl;
-	cout<<"                                "<<endl;
-	cout<<"                   b             "<<endl;
-}
-void constantChars()
-{
-    cout<<"greek = "<<greek<<endl;
-    cout<<"theta = "<<chTheta<<endl;
-    cout<<"pi = "<<chPi<<endl;
-    cout<<"beta = "<<chBeta<<endl;
-    cout<<"alpha = "<<chAlpha<<endl;
-    cout<<"degrees = "<<"32"<<chDegree<<endl;
 }

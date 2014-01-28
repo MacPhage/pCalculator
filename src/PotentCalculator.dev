@@ -72,8 +72,8 @@ BuildCmd=
 [VersionInfo]
 Major=0
 Minor=7
-Release=3
-Build=261
+Release=4
+Build=269
 LanguageID=1033
 CharsetID=1252
 CompanyName=Potent

@@ -24,90 +24,88 @@ void switchOperation()
     cout<<"\nChoose Operation: "; 
 	cin>>operation;
 	if(operation == "+")
-        {
-            menuAddition();
-        }
+    {
+        menuAddition();
+    }
     else if(operation == "-")
-        {
-            menuSubtraction();
-        }
+    {
+        menuSubtraction();
+    }
     else if(operation == "*")
-		{
-			menuMultiplication();
-		}
+	{
+		menuMultiplication();
+	}
 	else if(operation ==  "/")
-		{
-			menuDivision();
-		}
+	{
+		menuDivision();
+	}
 	else if(operation ==  "pow")
-		{
-			menuExponents();
-		}
+	{
+		menuExponents();
+	}
 	else if(operation ==  "sqrt")
-		{
-			menuSquareroot();
-		}
+	{
+		menuSquareroot();
+	}
 	else if(operation ==  "factorial")
-		{
-			menuFactorials();
-		}
+	{
+		menuFactorials();
+	}
 	else if(operation ==  "distance")
-		{
-	       	menuDistance();
-		}
+	{
+       	menuDistance();
+	}
 	else if(operation ==  "midpoint")
-		{
-			menuMidpoint();
-		}
+	{
+		menuMidpoint();
+	}
 	else if(operation ==  "slope")
-		{
-			menuSlope();
-		}
+	{
+		menuSlope();
+	}
 	else if(operation ==  "circum")
-		{
-			menuCircumference();
-		}
+	{
+		menuCircumference();
+	}
 	else if(operation ==  "radius")
-		{
-			menuRadius();
-		}
+	{
+		menuRadius();
+	}
 	else if(operation ==  "area")
-		{
-            menuArea();
-		}
+	{
+        menuArea();
+	}
 	else if(operation ==  "surfacearea")
-		{
-            menuSurfaceArea();
-		}
+	{
+        menuSurfaceArea();
+	}
     else if(operation ==  "volume")
-		{
-            menuVolume();
-		}
+	{
+        menuVolume();
+	}
 	else if(operation == "classify")
-	    {
-            menuClassify();
-        }
+    {
+        menuClassify();
+    }
     else if(operation == "pythag")
-        {
-            menuPythagoreanTheorem();
-        }
+    {
+        menuPythagoreanTheorem();
+    }
     else if(operation == "trig")
-        {
-            menuTrig();
-        }
+    {
+        menuTrig();
+    }
 	else if(operation == "polygon")
-		{
-			menuPolygon();
-		}
-	//MORE CASES
-	
+	{
+		menuPolygon();
+	}
 	else if(operation ==  "X")
 		{
-			enabled = false;
+			appstate = 1;
 		}
 	else if(operation ==  "@")
 		{
-			clearIns(pass);
+			clearIns();
 			about();
 		}
     else if(operation == "?")
@@ -129,10 +127,6 @@ void switchOperation()
         cout<<"CHARTEST : "<<iA<<iB<<endl;
         chartest(iA,iB);
     }
-    else if(operation == "constchars")
-    {
-        constantChars();
-    }
     else if(operation == "color" && isWindows == true)
     {
         cout<<"Enter a color value: "<<endl;
@@ -151,10 +145,6 @@ void switchOperation()
     {
 		matrix();
 	}
-	else if(operation == "drawTriangle")
-	{
-        drawTriangle();
-    }
     else if(operation == "infinitydemo")
     {
         double a = 8;
@@ -283,7 +273,6 @@ void menuClassify()
 void menuTrig()
 {
 	cout<<"Trigonometry operation selected."<<endl;
-	drawTriangle();
 	string command;
     cout<<"\nEnter one of the following supported operations:"<<endl;
     cout<<"   tan, cos, sin, aTan, aCos, aSin, (nothing else)"<<endl;
