@@ -52,6 +52,8 @@ Version 7:
   PATCH 4:
 	*Fixed a bug involving undefined slopes in the classify function
 	*Fixed a bug involving undefined slopes in the slope function
+	*Added trapezoid, isosceles trapezoid, and kite for quadrilateral classification function
+	*Added a "tf" (true or false) command (COMING SOON)
 
 Version 6:
 	* Added internal Director system for repetitive operations ("Director.h")

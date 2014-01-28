@@ -243,7 +243,7 @@ bool isPerpendicular(double slope1,double slope2)
     }
     else if( (isinf(slope1) && slope2 == 0) || (isinf(slope2) && slope1 == 0) )
     {
-        //cout<<"|-> The compared slopes are perpendicular, but one is undefined."<<endl;
+        cout<<"|-> The compared slopes are perpendicular, but one is undefined."<<endl;
         return true;
     }
     else
@@ -293,6 +293,14 @@ bool isRhombus(double X1, double Y1,double X2, double Y2,double X3, double Y3,do
 
 	double slopeAC = SlopeDecimal(X1,Y1,X3,Y3);
 	double slopeBD = SlopeDecimal(X2,Y2,X4,Y4);
+	
+	double distAB = DistanceSquareroot(X1,Y1,X2,Y2);
+	double distBC = DistanceSquareroot(X2,Y2,X3,Y3);
+	double distCD = DistanceSquareroot(X3,Y3,X4,Y4);
+	double distDA = DistanceSquareroot(X4,Y4,X1,Y1);
+
+	double distAC = DistanceSquareroot(X1,Y1,X3,Y3);
+	double distBD = DistanceSquareroot(X2,Y2,X4,Y4);
 
     if(isPerpendicular(slopeAC,slopeBD))
     {
@@ -303,7 +311,7 @@ bool isRhombus(double X1, double Y1,double X2, double Y2,double X3, double Y3,do
         perpendicularDiagonals = false;
     }
     
-    if( DistanceSquareroot(X1,Y1,X2,Y2) == DistanceSquareroot(X2,Y2,X3,Y3) && DistanceSquareroot(X3,Y3,X4,Y4) == DistanceSquareroot(X4,Y4,X1,Y1))
+    if(distAB == distBC && distCD == distDA)
     {
         congruentSides = true;
     }
@@ -384,8 +392,8 @@ bool isRectangle(double X1, double Y1,double X2, double Y2,double X3, double Y3,
     }
     else
     {
-        cout<<"\n|-> congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
-        cout<<"|-> fourRightAngles: "<<boolToString(fourRightAngles)<<endl;
+        cout<<"\n|-> [rectangle] congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
+        cout<<"|-> [rectangle] fourRightAngles: "<<boolToString(fourRightAngles)<<endl;
         testedRectangle = false;
         return false;
     }
@@ -401,4 +409,173 @@ bool isSquare(double X1, double Y1,double X2, double Y2,double X3, double Y3,dou
     {
         return false;
     }
+}
+
+bool isTrapezoid(double X1, double Y1,double X2, double Y2,double X3, double Y3,double X4, double Y4)
+{
+	double slopeAB = SlopeDecimal(X1,Y1,X2,Y2);
+	double slopeBC = SlopeDecimal(X2,Y2,X3,Y3);
+	double slopeCD = SlopeDecimal(X3,Y3,X4,Y4);
+	double slopeDA = SlopeDecimal(X4,Y4,X1,Y1);
+	
+	if( (slopeAB == slopeCD) && (slopeBC != slopeDA) && (slopeAB != slopeBC) && (slopeAB != slopeDA) )
+	{
+        //AB and CD are parallel, but no other sides are
+        return true;
+    }
+    else if( (slopeAB != slopeCD) && (slopeBC == slopeDA) && (slopeAB != slopeBC) && (slopeAB != slopeDA) )
+    {
+        //BC and DA are parallel, but no other sides are
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool isIsoscelesTrapezoid(double X1, double Y1,double X2, double Y2,double X3, double Y3,double X4, double Y4)
+{
+	double slopeAB = SlopeDecimal(X1,Y1,X2,Y2);
+	double slopeBC = SlopeDecimal(X2,Y2,X3,Y3);
+	double slopeCD = SlopeDecimal(X3,Y3,X4,Y4);
+	double slopeDA = SlopeDecimal(X4,Y4,X1,Y1);
+
+	double slopeAC = SlopeDecimal(X1,Y1,X3,Y3);
+	double slopeBD = SlopeDecimal(X2,Y2,X4,Y4);
+	
+	double distAB = DistanceSquareroot(X1,Y1,X2,Y2);
+	double distBC = DistanceSquareroot(X2,Y2,X3,Y3);
+	double distCD = DistanceSquareroot(X3,Y3,X4,Y4);
+	double distDA = DistanceSquareroot(X4,Y4,X1,Y1);
+
+	double distAC = DistanceSquareroot(X1,Y1,X3,Y3);
+	double distBD = DistanceSquareroot(X2,Y2,X4,Y4);
+	
+	bool congruentLegs;
+	bool congruentDiagonals;
+	
+	if( (slopeAB == slopeCD) && (slopeBC != slopeDA) && (slopeAB != slopeBC) && (slopeAB != slopeDA) )
+	{
+        //AB and CD are parallel, but no other sides are
+        //Check if the legs (the sides that are supposed to be the legs) are congruent
+        if(distBC == distDA)
+        {
+            congruentLegs = true;
+            cout<<"\n|-> [isoscelesTrapezoid] congruentLegs: "<<boolToString(congruentLegs)<<endl;
+        }
+        else
+        {
+            congruentLegs = false;
+            cout<<"\n|-> [isoscelesTrapezoid] congruentLegs: "<<boolToString(congruentLegs)<<endl;
+        }
+        
+        //Checks for congruent diagonals
+        if(distAC == distBD)
+        {
+            congruentDiagonals = true;
+            cout<<"|-> [isoscelesTrapezoid] congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
+        }
+        else
+        {
+            congruentDiagonals = false;
+            cout<<"|-> [isoscelesTrapezoid] congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
+        }
+    }
+    else if( (slopeAB != slopeCD) && (slopeBC == slopeDA) && (slopeAB != slopeBC) && (slopeAB != slopeDA) )
+    {
+        //BC and DA are parallel, but no other sides are
+        //Check if the legs (the sides that are supposed to be the legs) are congruent
+        if(distAB == distCD)
+        {
+            congruentLegs = true;
+            cout<<"\n|-> [isoscelesTrapezoid] congruentLegs: "<<boolToString(congruentLegs)<<endl;
+        }
+        else
+        {
+            congruentLegs = false;
+            cout<<"\n|-> [isoscelesTrapezoid] congruentLegs: "<<boolToString(congruentLegs)<<endl;
+        }
+        
+        //Checks for congruent diagonals
+        if(distAC == distBD)
+        {
+            congruentDiagonals = true;
+            cout<<"|-> [isoscelesTrapezoid] congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
+        }
+        else
+        {
+            congruentDiagonals = false;
+            cout<<"|-> [isoscelesTrapezoid] congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
+        }
+    }
+    else
+    {
+        //The shape is not a trapezoid
+        return false;
+    }
+    
+    if(congruentLegs == true && congruentDiagonals == true && isTrapezoid(X1,Y1,X2,Y2,X3,Y3,X4,Y4))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}
+
+bool isKite(double X1, double Y1,double X2, double Y2,double X3, double Y3,double X4, double Y4)
+{
+	double slopeAB = SlopeDecimal(X1,Y1,X2,Y2);
+	double slopeBC = SlopeDecimal(X2,Y2,X3,Y3);
+	double slopeCD = SlopeDecimal(X3,Y3,X4,Y4);
+	double slopeDA = SlopeDecimal(X4,Y4,X1,Y1);
+
+	double slopeAC = SlopeDecimal(X1,Y1,X3,Y3);
+	double slopeBD = SlopeDecimal(X2,Y2,X4,Y4);
+	
+	double distAB = DistanceSquareroot(X1,Y1,X2,Y2);
+	double distBC = DistanceSquareroot(X2,Y2,X3,Y3);
+	double distCD = DistanceSquareroot(X3,Y3,X4,Y4);
+	double distDA = DistanceSquareroot(X4,Y4,X1,Y1);
+
+	double distAC = DistanceSquareroot(X1,Y1,X3,Y3);
+	double distBD = DistanceSquareroot(X2,Y2,X4,Y4);
+	
+	bool consecutiveCongruentSides;
+	bool perpendicularDiagonals;
+	
+    if( (distAB == distBC && distCD == distDA) || (distBC == distCD && distDA == distAB))
+    {
+        consecutiveCongruentSides = true;
+        cout<<"\n|-> [kite] consecutiveCongruentSides: "<<boolToString(consecutiveCongruentSides)<<endl;
+    }
+    else
+    {
+        consecutiveCongruentSides = false;
+        cout<<"\n|-> [kite] consecutiveCongruentSides: "<<boolToString(consecutiveCongruentSides)<<endl;
+    }
+    
+    if(isPerpendicular(slopeAC,slopeBD))
+    {
+        perpendicularDiagonals = true;
+        cout<<"|-> [kite] perpendicularDiagonals: "<<boolToString(perpendicularDiagonals)<<endl;
+    }
+    else
+    {
+        perpendicularDiagonals = false;
+        cout<<"|-> [kite] perpendicularDiagonals: "<<boolToString(perpendicularDiagonals)<<endl;
+    }
+    
+    if(perpendicularDiagonals == true && consecutiveCongruentSides == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
 }

@@ -1,7 +1,7 @@
 [Project]
 FileName=PotentCalculator.dev
 Name=PotentCalculator
-UnitCount=7
+UnitCount=6
 Type=1
 Ver=1
 ObjFiles=
@@ -73,7 +73,7 @@ BuildCmd=
 Major=0
 Minor=7
 Release=4
-Build=269
+Build=275
 LanguageID=1033
 CharsetID=1252
 CompanyName=Potent
@@ -101,16 +101,6 @@ BuildCmd=
 FileName=PotentCalculator_private.h
 CompileCpp=1
 Folder=PotentCalculator
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit7]
-FileName=TrigonometryFunctions.h
-CompileCpp=1
-Folder=
 Compile=1
 Link=1
 Priority=1000

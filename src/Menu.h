@@ -468,8 +468,9 @@ void menuClassifyQuadrilateral()
 	cout<<"Rhombus: "<<boolToString(isRhombus(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
 	cout<<"Rectangle: "<<boolToString(isRectangle(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
 	cout<<"Square: "<<boolToString(isSquare(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
-	cout<<"Trapezoid: "<<"n/a"<<endl;
-	cout<<"Kite: "<<"n/a"<<endl;
+	cout<<"Trapezoid: "<<boolToString(isTrapezoid(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
+	cout<<"Isosceles Trapezoid: "<<boolToString(isIsoscelesTrapezoid(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
+	cout<<"Kite: "<<boolToString(isKite(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
 	
 	testedParallelogram = false;
     testedRhombus = false;

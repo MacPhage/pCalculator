@@ -22,7 +22,7 @@ int main()
     welcome();
 	pause();
 	while(appstate == 0)
-	{		
+	{
 		menu();
 		switchOperation();
 		if(appstate == 0)
