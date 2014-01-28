@@ -24,6 +24,7 @@ Commands now implemented:
 	- "color [colorID]"
 	- "disco [durationInt] [outputMode]"
 	- "constchars"
+	- "infinitydemo"
 	- "help"
 
 Change-log
@@ -48,6 +49,9 @@ Version 7:
 	*Added perimeter of a regular polygon function
   PATCH 3:
 	*Added quadrilateral classification function
+  PATCH 4:
+	*Fixed a bug involving undefined slopes in the classify function
+	*Fixed a bug involving undefined slopes in the slope function
 
 Version 6:
 	* Added internal Director system for repetitive operations ("Director.h")

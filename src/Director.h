@@ -155,10 +155,25 @@ void switchOperation()
 	{
         drawTriangle();
     }
+    else if(operation == "infinitydemo")
+    {
+        double a = 8;
+        double b = 0;
+        double c = a/b;
+        cout<<"double a="<<a<<endl;
+        cout<<"double b="<<b<<endl;
+        cout<<"double c="<<c<<endl;
+        cout<<"c=a/b"<<endl;
+        cout<<"c is being divided by 0, oh noes!"<<endl;
+        cout<<"isinf(a)="<<isinf(a)<<endl;
+        cout<<"isinf(b)="<<isinf(b)<<endl;
+        cout<<"isinf(c)="<<isinf(c)<<endl;
+        cout<<"isinf() checks for an \'infinite\' value and returns true if it is."<<endl;
+    }
 	else
-		{
-			cout<<"INVALID OPERATION GIVEN. RETURNING TO MENU."<<endl;
-		}
+	{
+		cout<<"INVALID OPERATION GIVEN. RETURNING TO MENU."<<endl;
+	}
 }
 
 void menuArea()

@@ -140,8 +140,16 @@ void menuSlope()
 	cin>>inC;
 	cout<<"\nPoint B, Y value (Y2): ";
 	cin>>inD;
-	cout<<"\nDecimal form: "<<"y = "<<SlopeDecimal(inA,inB,inC,inD)<<"x"<<endl;
+	if(isinf(SlopeDecimal(inA,inB,inC,inD)))
+	{
+        cout<<"\nDecimal form: undefined slope"<<endl;
+    }
+    else
+    {
+        cout<<"\nDecimal form: "<<"y = "<<SlopeDecimal(inA,inB,inC,inD)<<"x"<<endl;
+    }
 	cout<<"Fractional form: "<<"y = "<<SlopeFraction(inB,inD)<<"/"<<SlopeFraction(inA,inC)<<"x"<<endl;
+	
 	clearIns(pass);
 }
 void menuCircumference()

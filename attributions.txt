@@ -3,3 +3,5 @@ Attributions
 
 "solveRight" function-set ported from (JavaScript):
 - http://www.carbidedepot.com/formulas-trigright.asp
+	- This code is not actually implemented in pCalculator for its poor use in C++.
+	- This is NOT the fault of the author of said code, but of pCalculator.

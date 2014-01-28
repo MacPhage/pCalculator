@@ -1,38 +1,17 @@
-﻿About "PotentCalculator"
-
+About "PotentCalculator"
 - - - - - -
+Potent Calculator, or pCalculator, is a DOS command prompt/console-based 
+calculator for desktop computers written in C++.
 
+Potent Calculator allows you to easily perform basic arithmetic, algebra, 
+coordinate-based geometry, and trigonometry functions automatically and with ease. 
+The program is designed to be intuitive and easy to use by all.
 
+You can find the latest version of it on Srchub.org:
 
-The Potent Calculator is a C++ console application made by 14 year-old Austin Jackson,
+http://www.srchub.org/p/pcalculator
 
-of Houston, Texas, in the United States of America.
-
-
-
-It allows calculation of basic operations (+,-,*,/) via the Command Prompt (Windows) or 
-
-Terminal (Mac OS X). It also features automatic calculating of such functions like
-
-exponents and square root to Geometrical distance and midpoint, and many more.
-
-
-
-You can find the latest version of it on my website here:
-
-http://www.ruthlessphysics.com/potent/
-
-
-
-and you can give me feedback (even suggestions!) on my twitter:
-
-@MacPhage
-
-
-
-
-
-
+and you can give me feedback (even suggestions!) on my twitter: @MacPhage
 
 	Thanks for downloading my software! :)
 
@@ -40,9 +19,9 @@ and you can give me feedback (even suggestions!) on my twitter:
 
 
 
-This document was last updated on Saturday, October 19, 2013.
+This document was last updated on Monday, January 27, 2014.
 
-The Apple Mac OS X version was developed/compiled with Xcode.
+The Apple Mac OS X version was developed/compiled with Xcode, and may be compatible with some Unix/Linux systems.
 
 The Microsoft Windows version was developed/compiled with Bloodshed(c) Dev-C++.
 
