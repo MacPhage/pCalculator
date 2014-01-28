@@ -17,6 +17,17 @@ using namespace std;
 int main()
 {
     //potentIntro(800,800);
+    double a = 8;
+    double b = 0;
+    double c = a/b;
+    cout<<"a="<<a<<endl;
+    cout<<"b="<<b<<endl;
+    cout<<"c="<<c<<endl;
+    cout<<"c=a/b"<<endl;
+    cout<<"isinf(a)="<<isinf(a)<<endl;
+    cout<<"isinf(b)="<<isinf(b)<<endl;
+    cout<<"isinf(c)="<<isinf(c)<<endl;
+    pause();
     about();
     pause();
     welcome();

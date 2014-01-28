@@ -70,17 +70,6 @@ double Midpoint(double X1,double X2)
 }
 double SlopeDecimal(double X1,double Y1,double X2,double Y2)
 {
-    if(X2-X1 == 0)
-    {
-        if(Y2-Y1 >= 0)
-        {
-            return UNDEFINED_SLOPE;
-        }
-        else if(Y2-Y1 < 0)
-        {
-            return (-1)*UNDEFINED_SLOPE;
-        }
-    }
 	return ( (Y2-Y1)/(X2-X1) );
 }
 double SlopeFraction(double X1,double X2)
@@ -242,10 +231,9 @@ double polyAreaReg(double apothem, double sideLength, double sideAmount)
 	return (0.5*apothem*polyPerimeterReg(sideLength,sideAmount));
 }
 
-bool testedParallelogram;
-bool testedRhombus;
-bool testedRectangle;
-
+bool testedParallelogram = false;
+bool testedRhombus = false;
+bool testedRectangle = false;
 
 bool isPerpendicular(double slope1,double slope2)
 {
@@ -255,6 +243,11 @@ bool isPerpendicular(double slope1,double slope2)
     }
     else if(slope2 == (-1)/slope1)
     {
+        return true;
+    }
+    else if( (isinf(slope1) && slope2 == 0) || (isinf(slope2) && slope1 == 0) )
+    {
+        //cout<<"|-> The compared slopes are perpendicular, but one is undefined."<<endl;
         return true;
     }
     else
@@ -273,13 +266,21 @@ bool isParallelogram(double X1, double Y1,double X2, double Y2,double X3, double
 	double slopeAC = SlopeDecimal(X1,Y1,X3,Y3);
 	double slopeBD = SlopeDecimal(X2,Y2,X4,Y4);
 	
-	//I NEED TO CAST double'S AS string'S, BUT HOW?
-	
 	if( (slopeAB == slopeCD) && (slopeBC == slopeDA) && (slopeAB != slopeBC) && (slopeBC != slopeCD) && (slopeCD != slopeDA) && (slopeDA != slopeAB))
 	{
         testedParallelogram = true;
 		return true;
 	}
+	else if( (isinf(slopeAB) && isinf(slopeCD) && slopeBC == 0 && slopeDA == 0) || (isinf(slopeBC) && isinf(slopeDA) && slopeAB == 0 && slopeCD == 0) )
+	{
+        if(iA == 0)
+        {
+            cout<<"This parallelogram has an undefined slope (\'1.#INF\')."<<endl;
+            iA++;
+        }
+        testedParallelogram = true;
+        return true;
+    }
 	else
 	{
         testedParallelogram = false;
@@ -326,17 +327,17 @@ bool isRhombus(double X1, double Y1,double X2, double Y2,double X3, double Y3,do
     
     if(perpendicularDiagonals == true && congruentSides == true && bisectingDiagonals == true && isParallelogram(X1,Y1,X2,Y2,X3,Y3,X4,Y4) == true)
     {
-        cout<<"\n|-> perpendicularDiagonals: "<<boolToString(perpendicularDiagonals)<<endl;
-        cout<<"|-> congruentSides: "<<boolToString(congruentSides)<<endl;
-        cout<<"|-> bisectingDiagonals: "<<boolToString(bisectingDiagonals)<<endl;
+        cout<<"\n|-> [rhombus] perpendicularDiagonals: "<<boolToString(perpendicularDiagonals)<<endl;
+        cout<<"|-> [rhombus] congruentSides: "<<boolToString(congruentSides)<<endl;
+        cout<<"|-> [rhombus] bisectingDiagonals: "<<boolToString(bisectingDiagonals)<<endl;
         testedRhombus = true;
         return true;
     }
     else
     {
-        cout<<"\n|-> perpendicularDiagonals: "<<boolToString(perpendicularDiagonals)<<endl;
-        cout<<"|-> congruentSides: "<<boolToString(congruentSides)<<endl;
-        cout<<"|-> bisectingDiagonals: "<<boolToString(bisectingDiagonals)<<endl;
+        cout<<"\n|-> [rhombus] perpendicularDiagonals: "<<boolToString(perpendicularDiagonals)<<endl;
+        cout<<"|-> [rhombus] congruentSides: "<<boolToString(congruentSides)<<endl;
+        cout<<"|-> [rhombus] bisectingDiagonals: "<<boolToString(bisectingDiagonals)<<endl;
         testedRhombus = false;
         return false;
     }
@@ -380,8 +381,8 @@ bool isRectangle(double X1, double Y1,double X2, double Y2,double X3, double Y3,
     
     if(congruentDiagonals == true && fourRightAngles == true && isParallelogram(X1,Y1,X2,Y2,X3,Y3,X4,Y4) == true)
     {
-        cout<<"\n|-> congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
-        cout<<"|-> fourRightAngles: "<<boolToString(fourRightAngles)<<endl;
+        cout<<"\n|-> [rectangle] congruentDiagonals: "<<boolToString(congruentDiagonals)<<endl;
+        cout<<"|-> [rectangle] fourRightAngles: "<<boolToString(fourRightAngles)<<endl;
         testedRectangle = true;
         return true;
     }

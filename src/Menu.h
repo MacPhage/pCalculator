@@ -414,6 +414,8 @@ void menuClassifyQuadrilateral()
     cout<<"The points *NEED* to be in order around the figure. "<<endl;
     cout<<"Enter coordinate points now: ";
     
+    iA = 0;
+    
 	cin>>inA;
 	cout<<"Point A, X value (X1).";
 	cin>>inB;
@@ -435,9 +437,8 @@ void menuClassifyQuadrilateral()
 	double slopeBC = SlopeDecimal(inC,inD,inE,inF);
 	double slopeCD = SlopeDecimal(inE,inF,inG,inH);
 	double slopeDA = SlopeDecimal(inG,inH,inA,inB);
-	
-	cout<<"\n\nTHIS DOESN'T CURRENTLY WORK WITH UNDEFINED SLOPES, AS THEY DIVIDE BY 0 AND GIVE AN ERROR"<<endl;
-	cout<<"Slope of point A & B = "<<slopeAB<<endl;
+
+	cout<<"\n\nSlope of point A & B = "<<slopeAB<<endl;
 	cout<<"Slope of point B & C = "<<slopeBC<<endl;
 	cout<<"Slope of point C & D = "<<slopeCD<<endl;
 	cout<<"Slope of point D & A = "<<slopeDA<<endl;
@@ -448,6 +449,10 @@ void menuClassifyQuadrilateral()
 	cout<<"Square: "<<boolToString(isSquare(inA,inB,inC,inD,inE,inF,inG,inH))<<endl;
 	cout<<"Trapezoid: "<<"n/a"<<endl;
 	cout<<"Kite: "<<"n/a"<<endl;
+	
+	testedParallelogram = false;
+    testedRhombus = false;
+    testedRectangle = false;
 	
     if(false)
     {

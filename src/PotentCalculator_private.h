@@ -5,11 +5,11 @@
 #define POTENTCALCULATOR_PRIVATE_H
 
 /* VERSION DEFINITIONS */
-#define VER_STRING	"0.7.3.248"
+#define VER_STRING	"0.7.3.261"
 #define VER_MAJOR	0
 #define VER_MINOR	7
 #define VER_RELEASE	3
-#define VER_BUILD	248
+#define VER_BUILD	261
 #define COMPANY_NAME	"Potent"
 #define FILE_VERSION	""
 #define FILE_DESCRIPTION	""

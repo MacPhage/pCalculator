@@ -26,7 +26,7 @@ string strA,strB,strC,strD;
 string operation,operation2,operation3;
 char pauseChar;
 bool enabled = true;
-bool isWindows = false;
+bool isWindows = true;
 /*
     If you are compiling this software for Windows, please set this to true.
     If you are compiling this software for anything other than windows,
