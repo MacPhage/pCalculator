@@ -18,6 +18,7 @@ void menuClassify();
 void menuClassifyTriangle();
 void menuTrig();
 void menuPolygon();
+void menuTrueFalse();
 
 void switchOperation()
 {
@@ -99,6 +100,10 @@ void switchOperation()
 	{
 		menuPolygon();
 	}
+	else if(operation == "tf")
+	{
+        menuTrueFalse();
+    }
 	else if(operation ==  "X")
 		{
 			appstate = 1;
@@ -335,5 +340,26 @@ void menuPolygon()
     else if(command == "perimeterRegular")
     {
         menuPolyPerimeterReg();
+    }
+}
+
+void menuTrueFalse()
+{
+    cout<<"True-or-False operation selected."<<endl;
+	string command;
+	cout<<"This command allows you to test if different properties are true or false."<<endl;
+    cout<<"\nEnter one of the following supported operations:"<<endl;
+    cout<<"   perpendicular, (nothing else)"<<endl;
+    cout<<"Operation: ";
+    cin>>command;
+    cout<<"\n";
+
+    if(command == "perpendicular")
+    {
+        menuTFPerpendicular();
+    }
+    else if(command == "")
+    {
+        //
     }
 }

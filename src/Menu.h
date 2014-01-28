@@ -475,28 +475,6 @@ void menuClassifyQuadrilateral()
 	testedParallelogram = false;
     testedRhombus = false;
     testedRectangle = false;
-	
-    if(false)
-    {
-	/*
-        initwindow(500,500,"Graph");
-        outtextxy((int)inA*50,(int)inB*50-17,"A");
-        circle((int)inA*50,(int)inB*50,2);
-        outtextxy((int)inC*50,(int)inD*50-17,"B");
-        circle((int)inC*50,(int)inD*50,2);
-        outtextxy((int)inE*50,(int)inF*50-17,"C");
-        circle((int)inE*50,(int)inF*50,2);
-        outtextxy((int)inG*50,(int)inH*50-17,"D");
-        circle((int)inG*50,(int)inH*50,2);
-        cout<<"\nA graph of the points has been drawn."<<endl;
-        cout<<"This graphing functionality is in beta so there may be issues."<<endl;
-        pause();
-	*/
-    }
-	
-	
-	
-	
     clearIns();
 }
 
@@ -593,3 +571,13 @@ void menuPolyPerimeterReg()
     cout<<"\n\nPolygon perimeter calculated as: "<<polyPerimeterReg(inA,inB)<<endl;
 }
 
+void menuTFPerpendicular()
+{
+    cout<<"Perpendicular TrueFalse operation selected."<<endl;
+    cout<<"Example: \'1 -1\' = [slope1] [slope2]"<<endl;
+    cout<<"Enter both slopes seperated by spaces in decimal form: ";
+    cin>>inA;
+    cout<<"Received.";
+    cin>>inB;
+    cout<<"\n\nPerpendicular Slopes: "<<boolToString(isPerpendicular(inA,inB))<<endl;
+}
