@@ -3,7 +3,8 @@
 //
 //  Java Source File
 //
-//  Created by Austin Jackson
+//  Created by Austin Jackson,
+//  Last modified on June 11, 2014.
 //
 //  Editted with Atom
 //  https://atom.io/
@@ -14,10 +15,6 @@
 
 package Function;
 
-import java.awt.*;
-import javax.swing.*;
-import java.lang.*;
-import java.io.*;
 import java.util.*;
 
 public class OtherFunction
@@ -32,14 +29,11 @@ public class OtherFunction
     {
       //Calculations using input
     }
-    catch(Exception e)
+    catch(NumberFormatException e)
     {
       e.printStackTrace();
-      if(Errors.shouldDisplayErrors() == true)
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
     }
     return r;
   }
+
 }

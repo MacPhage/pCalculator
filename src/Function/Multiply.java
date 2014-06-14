@@ -1,5 +1,5 @@
 //
-//  Add.java
+//  Multiply.java
 //
 //  Java Source File
 //
@@ -16,14 +16,14 @@ package Function;
 
 import java.awt.*;
 import javax.swing.*;
-import java.lang.*;
+import java.util.*;
 
-public class Add
+public class Multiply
 {
-  /* Add
-  // Finds the sum of all the items in the given array
+  /* Multiply
+  // Finds the product of all the items in the given array
   */
-  public static String calculate(String[] c) //Input command
+  public static String calculate(String[] c)
   {
     double r = 0; //Result
     for(int i = 0; i < c.length; i++)
@@ -31,7 +31,7 @@ public class Add
       //Adds each number in every index together to form the sum
       try
       {
-        r += Double.parseDouble(c[i]);
+        r *= Double.parseDouble(c[i]);
       }
       catch (Exception e)
       {

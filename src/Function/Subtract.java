@@ -1,5 +1,5 @@
 //
-//  Add.java
+//  Subtract.java
 //
 //  Java Source File
 //
@@ -18,20 +18,29 @@ import java.awt.*;
 import javax.swing.*;
 import java.lang.*;
 
-public class Add
+public class Subtract
 {
-  /* Add
-  // Finds the sum of all the items in the given array
+  /* Subtract
+  // Subtracts all other numbers from the first number
   */
   public static String calculate(String[] c) //Input command
   {
-    double r = 0; //Result
-    for(int i = 0; i < c.length; i++)
+    double r; //Result
+    try
     {
-      //Adds each number in every index together to form the sum
+      r = Double.parseDouble(c[0]); //Result;
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
+      return c[0];
+    }
+    for(int i = 1; i < c.length; i++)
+    {
+      //Subtract each number in every index after 0 continuously to form the difference
       try
       {
-        r += Double.parseDouble(c[i]);
+        r -= Double.parseDouble(c[i]);
       }
       catch (Exception e)
       {

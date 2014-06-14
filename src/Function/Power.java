@@ -1,9 +1,9 @@
 //
-//  Add.java
+//  Power.java
 //
 //  Java Source File
 //
-//  Created by Austin Jackson
+//  Created by Austin Jackson,
 //
 //  Editted with Atom
 //  https://atom.io/
@@ -18,20 +18,29 @@ import java.awt.*;
 import javax.swing.*;
 import java.lang.*;
 
-public class Add
+public class Power
 {
-  /* Add
-  // Finds the sum of all the items in the given array
+  /* Power
+  // Raises each number in the current index to the power of the next
   */
-  public static String calculate(String[] c) //Input command
+  public static String calculate(String[] c)
   {
-    double r = 0; //Result
-    for(int i = 0; i < c.length; i++)
+    double r; //Result
+    try
+    {
+      r = Double.parseDouble(c[0]); //Result;
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
+      return c[0];
+    }
+    for(int i = 1; i < c.length; i++)
     {
       //Adds each number in every index together to form the sum
       try
       {
-        r += Double.parseDouble(c[i]);
+        r = Math.pow(r,Double.parseDouble(c[i]));
       }
       catch (Exception e)
       {
@@ -45,5 +54,6 @@ public class Add
     }
     return Double.toString(r);
   }
+
 
 }

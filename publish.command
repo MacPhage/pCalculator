@@ -1,10 +1,12 @@
-cd ~/Documents/Git/Obskewer/src/
-cd Algorithms
-javac ClassicShift.java
-javac TrueCaesar.java
-javac Morse.java
-javac Numbers.java
-javac Skip.java
-cd -
-javac Obskewer.java
-jar cfm ../bin/Obskewer-snapshot.jar Manifest.txt Obskewer.class Algorithms/*.class
+cd ~/Documents/Git/pCalculator/src/
+cd Function
+javac -d . -sourcepath . Errors.java
+javac -d . -sourcepath . Add.java
+javac -d . -sourcepath . Subtract.java
+javac -d . -sourcepath . Multiply.java
+javac -d . -sourcepath . Divide.java
+javac -d . -sourcepath . Power.java
+javac -d . -sourcepath . Squareroot.java
+cd ..
+javac Calculator.java
+jar cfm ../bin/pCalculator-snapshot.jar Manifest.txt Calculator.class Function/*.class icon_1024.png
