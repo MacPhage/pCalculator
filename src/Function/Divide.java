@@ -31,7 +31,7 @@ public class Divide
       //Adds each number in every index together to form the sum
       try
       {
-        r /= Double.parseDouble(c[i]);
+        r = r / Double.parseDouble(c[i]);
       }
       catch (Exception e)
       {
