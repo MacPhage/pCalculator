@@ -33,7 +33,7 @@ import Function.Factorial;
 public class Calculator
 {
   static String titleText = "pCalculator";
-  static String version = "1.0.0, in development";
+  static String version = "1.0.0, last updated June 14, 2014.";
   static String changes = "- Initial release"+
   ""+
   "";
@@ -92,6 +92,7 @@ public class Calculator
       conversion stuff is done per Function Class and is customized as needed
       per Function Class.
       */
+
       if(command.equals("add"))
       {
         alert("Result: \n"+Add.calculate(baton),"information");
