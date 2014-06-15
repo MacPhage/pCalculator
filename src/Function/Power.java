@@ -33,7 +33,7 @@ public class Power
     catch (Exception e)
     {
       e.printStackTrace();
-      if(Errors.shouldDisplayErrors())
+      if(Debug.displayDebug())
       {
         JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
       }
@@ -49,7 +49,7 @@ public class Power
       catch (Exception e)
       {
         e.printStackTrace();
-        if(Errors.shouldDisplayErrors())
+        if(Debug.displayDebug())
         {
           JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
         }

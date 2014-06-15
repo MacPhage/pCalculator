@@ -37,7 +37,7 @@ public class Add
       catch (Exception e)
       {
         e.printStackTrace();
-        if(Errors.shouldDisplayErrors())
+        if(Debug.displayDebug())
         {
           JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
         }

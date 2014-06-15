@@ -35,7 +35,7 @@ public class OtherFunction
     catch(Exception e)
     {
       e.printStackTrace();
-      if(Errors.shouldDisplayErrors() == true)
+      if(Debug.displayDebug() == true)
       {
         JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
       }

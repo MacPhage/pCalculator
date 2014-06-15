@@ -20,6 +20,8 @@ import java.text.*;
 import javax.imageio.*;
 import com.apple.eawt.Application;
 
+import Function.Debug;
+
 import Function.Add;
 import Function.Subtract;
 import Function.Multiply;
@@ -38,43 +40,41 @@ public class Calculator
 
   public static void main(String args[])
   {
+    boolean debug = false;
 
-    Properties config = new Properties();
-    OutputStream output = null;
-    try
-    {
-      output = new FileOutputStream("pcalculator.properties");
-      // set the properties value
-      config.setProperty("displayErrors", "no");
-      // save properties to project root folder
-      config.store(output, null);
-    }
-    catch (IOException io)
-    {
-      io.printStackTrace();
-    }
-    finally
-    {
-      if (output != null)
-      {
-        try
-        {
-          output.close();
-        }
-        catch (IOException e)
-        {
-          e.printStackTrace();
-        }
-      }
-    }
-
-
-    String[] input = {""}; //Direct input from JOptionPane, then splitted
+    String[] input = {"",""}; //Direct input from JOptionPane, then splitted
     java.util.List<String> tempList; //input[] passes through this to remove the first index
-    String[] baton = {""}; //Passed data after being processed through tempList
+    String[] baton = {"",""}; //Passed data after being processed through tempList
     String command; //Actual command (input[0])
     while(true)
     {
+      if(debug == true)
+      {
+        if(Debug.debugFileExists() == false || baton[0].equals("reset"))
+        {
+          Debug.setDefault();
+        }
+        else if(baton[0].equals("delete"))
+        {
+          try
+          {
+            File fileTemp = new File("pcalculator.properties");
+            if (fileTemp.exists())
+            {
+              fileTemp.delete();
+            }
+          }
+          catch(Exception e)
+          {
+            e.printStackTrace();
+            if(Debug.displayDebug())
+            {
+              JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+            }
+          }
+        }
+        debug = false;
+      }
       input[0] = JOptionPane.showInputDialog(null,"Enter a command: ","help");
       input = input[0].split(" ");
       command = input[0];
@@ -133,6 +133,35 @@ public class Calculator
         //System.exit(0);
         break;
       }
+      else if(command.equals("debug"))
+      {
+        try
+        {
+          if(baton[0].equals("reset"))
+          {
+            alert("Debugging file (pcalculator.properties) will be reset to its default state.","warning");
+          }
+          else if(baton[0].equals("delete"))
+          {
+            alert("Debugging file (pcalculator.properties) will be deleted if it isn\'t already.","warning");
+          }
+          else
+          {
+            alert("Debugging file (pcalculator.properties) will be created if one doesn\'t exists already.\nDelete it to stop its effects on this program.","warning");
+          }
+          debug = true;
+        }
+        catch (Exception e)
+        {
+          e.printStackTrace();
+          if(Debug.displayDebug())
+          {
+            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+          }
+          alert("Debugging file (pcalculator.properties) will be created if one doesn\'t exists already.\nDelete it to stop its effects on this program.","warning");
+          debug = true;
+        }
+      }
       else
       {
         alert("That wasn\'t a valid command.","warning");
@@ -183,6 +212,15 @@ public class Calculator
   public static void alert(String message, String type) //Just like JavaScript :P
   {
     type = type.toLowerCase();
+    String newType = Debug.alertAlwaysAs();
+    if(newType.equals("pass"))
+    {
+      //Purposely nothing
+    }
+    else
+    {
+      type = newType;
+    }
     if(type.equals("error"))
     {
       JOptionPane.showMessageDialog(null,message,titleText,JOptionPane.ERROR_MESSAGE);
@@ -205,7 +243,8 @@ public class Calculator
     }
     else
     {
-      System.out.println("Attempted to alert() with invalid type: "+type);
+      JOptionPane.showMessageDialog(null,message,titleText,JOptionPane.PLAIN_MESSAGE);
+      System.out.println("Attempted to alert() with invalid type: \'"+type+"\', went with plain instead.");
     }
 
   }

@@ -1,5 +1,5 @@
 cd ~/Documents/Git/pCalculator/src/
-javac -d . -sourcepath . Function/Errors.java
+javac -d . -sourcepath . Function/Debug.java
 javac -d . -sourcepath . Function/Add.java
 javac -d . -sourcepath . Function/Subtract.java
 javac -d . -sourcepath . Function/Multiply.java
