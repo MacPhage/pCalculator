@@ -1,10 +1,9 @@
 //
-//  OtherCipher.java
+//  Factorial.java
 //
 //  Java Source File
 //
-//  Created by Austin Jackson,
-//  Last modified on June 11, 2014.
+//  Created by Austin Jackson
 //
 //  Editted with Atom
 //  https://atom.io/
@@ -13,27 +12,46 @@
 //  http://srchub.org/u/mac
 //
 
-package Function;
+package Function; //as
 
+import java.awt.*;
+import javax.swing.*;
+import java.lang.*;
+import java.io.*;
 import java.util.*;
 
-public class OtherFunction
+public class Factorial
 {
-  /* Name of Function
+  /* Factorial
   // Description of function.
   */
   public static String calculate(String[] c)
   {
-    double r = 0; //Result
+    double a = 0;
+    double b = 1; //Result
+    String r = "";
     try
     {
-      //Calculations using input
+      for(int i = 0; i < c.length; i++)
+      {
+        a = Double.parseDouble(c[i]);
+        while(a > 1)
+        {
+          b *= a;
+          a--;
+        }
+        r += "Factorial of "+c[i]+" is "+b+".\n";
+        b = 1;
+      }
     }
-    catch(NumberFormatException e)
+    catch(Exception e)
     {
       e.printStackTrace();
+      if(Errors.shouldDisplayErrors() == true)
+      {
+        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+      }
     }
     return r;
   }
-
 }

@@ -1,5 +1,5 @@
 //
-//  Obskewer.java
+//  Calculator.java
 //
 //  Java Source File
 //
@@ -17,6 +17,7 @@ import javax.swing.*;
 import java.util.*;
 import java.io.*;
 import java.text.*;
+import javax.imageio.*;
 import com.apple.eawt.Application;
 
 import Function.Add;
@@ -25,34 +26,28 @@ import Function.Multiply;
 import Function.Divide;
 import Function.Power;
 import Function.Squareroot;
+import Function.Factorial;
 
 public class Calculator
 {
   static String titleText = "pCalculator";
-  static String version = "1.0.0, last updated June 13, 2014.";
+  static String version = "1.0.0, in development";
   static String changes = "- Initial release"+
   ""+
   "";
-  static String operatingSystem = System.getProperty("os.name");
-  //static JFrame frame = new JFrame();
 
   public static void main(String args[])
   {
 
     Properties config = new Properties();
     OutputStream output = null;
-
     try
     {
-
-      output = new FileOutputStream("config.properties");
-
+      output = new FileOutputStream("pcalculator.properties");
       // set the properties value
       config.setProperty("displayErrors", "no");
-
       // save properties to project root folder
       config.store(output, null);
-
     }
     catch (IOException io)
     {
@@ -121,6 +116,10 @@ public class Calculator
       {
         alert("Result: \n"+Squareroot.calculate(baton),"information");
       }
+      else if(command.equals("factorial"))
+      {
+        alert("Result: \n"+Factorial.calculate(baton), "information");
+      }
       else if(command.equals("info"))
       {
         showInfo();
@@ -131,7 +130,8 @@ public class Calculator
       }
       else if(command.equals("quit"))
       {
-        System.exit(0);
+        //System.exit(0);
+        break;
       }
       else
       {
@@ -154,8 +154,9 @@ public class Calculator
   public static void showCommands()
   {
     JOptionPane.showMessageDialog(null,
-    "Terminology:\n"+
+    "Guide:\n"+
     "- List = multiple inputs seperated by spaces\n"+
+    "- Commands ARE case-sensitive! Typing \"add\" is different from \"ADD\"\n"+
     "\n"+
     "Commands: (full list at srchub.org/p/pcalculator)\n"+
     "- Help\n"+
@@ -174,6 +175,8 @@ public class Calculator
     "  - Use \"power [list]\"\n"+
     "- Squareroot\n"+
     "  - Use \"squareroot [list]\"\n"+
+    "- Factorial\n"+
+    "  - Use \"factorial [list]\"\n"+
     "\n",
     "pCalculator Command List",JOptionPane.INFORMATION_MESSAGE);
   }

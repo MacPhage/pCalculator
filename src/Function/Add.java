@@ -26,6 +26,7 @@ public class Add
   public static String calculate(String[] c) //Input command
   {
     double r = 0; //Result
+    String m = "The sum of ";
     for(int i = 0; i < c.length; i++)
     {
       //Adds each number in every index together to form the sum
@@ -42,8 +43,21 @@ public class Add
         }
         break;
       }
+      if(c.length-i == 2) //Make a message of the end result while it's being calculated
+      {
+        m += c[i]+", and ";
+      }
+      else if(c.length-i == 1)
+      {
+        m += c[i];
+      }
+      else
+      {
+        m += c[i]+", ";
+      }
     }
-    return Double.toString(r);
+    m += " equals "+r;
+    return m;
   }
 
 }

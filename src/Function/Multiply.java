@@ -25,13 +25,27 @@ public class Multiply
   */
   public static String calculate(String[] c)
   {
-    double r = 0; //Result
-    for(int i = 0; i < c.length; i++)
+    double r; //Result
+    String m = "The product of "+c[0]+", ";
+    try
+    {
+      r = Double.parseDouble(c[0]); //Result;
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
+      if(Errors.shouldDisplayErrors())
+      {
+        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+      }
+      return c[0];
+    }
+    for(int i = 1; i < c.length; i++)
     {
       //Adds each number in every index together to form the sum
       try
       {
-        r = r * Double.parseDouble(c[i]);
+        r *= Double.parseDouble(c[i]);
       }
       catch (Exception e)
       {
@@ -42,8 +56,21 @@ public class Multiply
         }
         break;
       }
+      if(c.length-i == 2) //Make a message of the end result while it's being calculated
+      {
+        m += c[i]+", and ";
+      }
+      else if(c.length-i == 1)
+      {
+        m += c[i];
+      }
+      else
+      {
+        m += c[i]+", ";
+      }
     }
-    return Double.toString(r);
+    m += " equals "+r;
+    return m;
   }
 
 }

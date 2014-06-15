@@ -33,6 +33,10 @@ public class Power
     catch (Exception e)
     {
       e.printStackTrace();
+      if(Errors.shouldDisplayErrors())
+      {
+        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+      }
       return c[0];
     }
     for(int i = 1; i < c.length; i++)

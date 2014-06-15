@@ -25,13 +25,28 @@ public class Divide
   */
   public static String calculate(String[] c)
   {
-    double r = 0; //Result
-    for(int i = 0; i < c.length; i++)
+    double r; //Result
+    try
+    {
+      r = Double.parseDouble(c[0]); //Result;
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
+      if(Errors.shouldDisplayErrors())
+      {
+        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+      }
+      return c[0];
+    }
+
+    for(int i = 1; i < c.length; i++)
     {
       //Adds each number in every index together to form the sum
       try
       {
-        r = r / Double.parseDouble(c[i]);
+
+        r /= Double.parseDouble(c[i]);
       }
       catch (Exception e)
       {
