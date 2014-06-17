@@ -17,8 +17,6 @@ import javax.swing.*;
 import java.util.*;
 import java.io.*;
 import java.text.*;
-import javax.imageio.*;
-import com.apple.eawt.Application;
 
 import Function.Debug;
 
@@ -29,6 +27,7 @@ import Function.Divide;
 import Function.Power;
 import Function.Squareroot;
 import Function.Factorial;
+import Function.QuadraticForumula;
 
 public class Calculator
 {
@@ -121,6 +120,10 @@ public class Calculator
       {
         alert("Result: \n"+Factorial.calculate(baton), "information");
       }
+      else if(command.equals("quadraticFormula"))
+      {
+        alert("Result: \n"+Factorial.calculate(baton), "information");
+      }
       else if(command.equals("info"))
       {
         showInfo();
@@ -207,6 +210,8 @@ public class Calculator
     "  - Use \"squareroot [list]\"\n"+
     "- Factorial\n"+
     "  - Use \"factorial [list]\"\n"+
+    "- Quadratic Formula\n"+
+    "  - Use \"quadraticFormula [a] [b] [c]\"\n"+
     "\n",
     "pCalculator Command List",JOptionPane.INFORMATION_MESSAGE);
   }
