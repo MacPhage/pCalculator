@@ -27,7 +27,7 @@ import Function.Divide;
 import Function.Power;
 import Function.Squareroot;
 import Function.Factorial;
-import Function.QuadraticForumula;
+import Function.QuadraticFormula;
 
 public class Calculator
 {
@@ -122,7 +122,7 @@ public class Calculator
       }
       else if(command.equals("quadraticFormula"))
       {
-        alert("Result: \n"+Factorial.calculate(baton), "information");
+        alert("Result: \n"+QuadraticFormula.calculate(baton), "information");
       }
       else if(command.equals("info"))
       {

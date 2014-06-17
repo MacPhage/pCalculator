@@ -20,7 +20,7 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-public class QuadraticForumula
+public class QuadraticFormula
 {
   /* Name of Function
   // Description of function.

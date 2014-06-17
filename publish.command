@@ -7,7 +7,7 @@ javac -d . -sourcepath . Function/Divide.java
 javac -d . -sourcepath . Function/Power.java
 javac -d . -sourcepath . Function/Squareroot.java
 javac -d . -sourcepath . Function/Factorial.java
-javac -d . -sourcepath . Function/QuadraticForumula.java
+javac -d . -sourcepath . Function/QuadraticFormula.java
 javac Calculator.java
 jar cfm ../bin/pCalculator-snapshot.jar Manifest.txt Calculator.class Function/*.class res/icon_1024.png
 
