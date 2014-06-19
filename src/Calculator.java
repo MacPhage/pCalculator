@@ -74,7 +74,7 @@ public class Calculator
         }
         debug = false;
       }
-      input[0] = JOptionPane.showInputDialog(null,"Enter a command: ","help");
+      input[0] = JOptionPane.showInputDialog(null,"Enter a command: ",Debug.defaultCommand());
       input = input[0].split(" ");
       command = input[0];
       tempList = new ArrayList<String>(Arrays.asList(input));

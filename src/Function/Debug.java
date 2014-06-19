@@ -48,8 +48,9 @@ public class Debug
     try
     {
       output = new FileOutputStream("pcalculator.properties");
-      config.setProperty("displayDebug", "no");
+      config.setProperty("displayDebug", "yes");
       config.setProperty("alertAlwaysAs", "pass");
+      config.setProperty("defaultCommand","help");
       config.store(output, null);
     }
     catch (IOException io)
@@ -138,6 +139,38 @@ public class Debug
         {
           e.printStackTrace();
           return "pass";
+        }
+      }
+    }
+  }
+  public static String defaultCommand()
+  {
+    Properties prop = new Properties();
+    InputStream input = null;
+    try
+    {
+      input = new FileInputStream("pcalculator.properties");
+      prop.load(input);
+      String type = prop.getProperty("defaultCommand");
+      return type;
+    }
+    catch (IOException ex)
+    {
+    ex.printStackTrace();
+    return "help";
+    }
+    finally
+    {
+      if (input != null)
+      {
+        try
+        {
+          input.close();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+          return "help";
         }
       }
     }
