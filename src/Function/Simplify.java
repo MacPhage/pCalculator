@@ -1,5 +1,5 @@
 //
-//  OtherCipher.java
+//  Simplify.java
 //
 //  Java Source File
 //
@@ -20,7 +20,7 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-public class OtherFunction
+public class Simplify
 {
   /* Name of Function
   // Description of function.
@@ -28,9 +28,24 @@ public class OtherFunction
   public static String calculate(String[] c)
   {
     String r = ""; //Result
+    String type = c[0];
+    long a,b,gcd;
     try
     {
-      //Calculations using input
+      if(type.equals("fraction"))
+      {
+        for(int i = 1; i < c.length; i+=2)
+        {
+          a = Long.parseLong(c[i]);
+          b = Long.parseLong(c[i+1]);
+          gcd = GreatestCommonDivisor.gcd(a, b);
+          r += (c[i]+"/"+c[i+1]+" simplified to "+(a / gcd)+"/"+(b / gcd)+"\n");
+        }
+      }
+      else
+      {
+        r = "I can't simplify those.";
+      }
     }
     catch(Exception e)
     {

@@ -1,5 +1,5 @@
 //
-//  OtherCipher.java
+//  QuadraticFormula.java
 //
 //  Java Source File
 //
@@ -22,8 +22,8 @@ import java.util.*;
 
 public class QuadraticFormula
 {
-  /* Name of Function
-  // Description of function.
+  /* Quadratic Formula
+  // Performs the quadratic formula
   */
   public static String calculate(String[] in)
   {
@@ -35,8 +35,8 @@ public class QuadraticFormula
       b = Double.parseDouble(in[1]);
       c = Double.parseDouble(in[2]);
 
-      r += "Solution #1 (+): "+(((-1.0*b)+Math.sqrt(Math.pow(b,2.0)-(4.0*a*c)))/2.0*a)+"\n";
-      r += "Solution #2 (-): "+(((-1.0*b)-Math.sqrt(Math.pow(b,2.0)-(4.0*a*c)))/2.0*a)+"\n";
+      r += "Decimal Solution #1 (+): "+( (-(b)) + Math.sqrt(( b * b) - (4 * a * c)) )  / (2 * a)+"\n";
+      r += "Decimal Solution #2 (-): "+( (-(b)) - Math.sqrt(( b * b) - (4 * a * c)) )  / (2 * a)+"\n";
     }
     catch(Exception e)
     {

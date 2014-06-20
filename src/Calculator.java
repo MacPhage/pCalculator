@@ -28,14 +28,20 @@ import Function.Power;
 import Function.Squareroot;
 import Function.Factorial;
 import Function.QuadraticFormula;
+import Function.GreatestCommonDivisor;
+import Function.LeastCommonMultiple;
+import Function.Simplify;
 
 public class Calculator
 {
   static String titleText = "pCalculator";
-  static String version = "1.0.0, last updated June 14, 2014.";
-  static String changes = "- Initial release"+
-  ""+
-  "";
+  static String version = "1.1.0, last updated June 20, 2014.";
+  static String changes = "- Added Factorial support\n"+
+  "- Added Quadratic Formula support\n"+
+  "- Added Greatest Common Divisor support\n"+
+  "- Added Least Common Multiple support\n"+
+  "- Added Simplify function (fractions only, for now)\n"+
+  "\n";
 
   public static void main(String args[])
   {
@@ -123,6 +129,18 @@ public class Calculator
       else if(command.equals("quadraticFormula"))
       {
         alert("Result: \n"+QuadraticFormula.calculate(baton), "information");
+      }
+      else if(command.equals("gcd"))
+      {
+        alert("Result: \n"+GreatestCommonDivisor.calculate(baton), "information");
+      }
+      else if(command.equals("lcm"))
+      {
+        alert("Result: \n"+LeastCommonMultiple.calculate(baton), "information");
+      }
+      else if(command.equals("simplify"))
+      {
+        alert("Result: \n"+Simplify.calculate(baton), "information");
       }
       else if(command.equals("info"))
       {
@@ -212,6 +230,14 @@ public class Calculator
     "  - Use \"factorial [list]\"\n"+
     "- Quadratic Formula\n"+
     "  - Use \"quadraticFormula [a] [b] [c]\"\n"+
+    "- Greatest Common Divisor\n"+
+    "  - Use \"gcd [list]\"\n"+
+    "- Least Common Multiple\n"+
+    "  - Use \"lcm [list]\"\n"+
+    "- Simplify\n"+
+    "  - Use \"simplify [type] [list]\"\n"+
+    "  - Valid types: \"fraction, (none)\"\n"+
+    "  - Example: \"simplify fraction 5 10 5 15\"\n"+
     "\n",
     "pCalculator Command List",JOptionPane.INFORMATION_MESSAGE);
   }
