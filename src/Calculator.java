@@ -31,6 +31,7 @@ import Function.QuadraticFormula;
 import Function.GreatestCommonDivisor;
 import Function.LeastCommonMultiple;
 import Function.Simplify;
+import Function.Count;
 
 public class Calculator
 {
@@ -98,27 +99,27 @@ public class Calculator
       per Function Class.
       */
 
-      if(command.equals("add"))
+      if(command.equals("add") || command.equals("+"))
       {
         alert("Result: \n"+Add.calculate(baton),"information");
       }
-      else if(command.equals("subtract"))
+      else if(command.equals("subtract") || command.equals("-"))
       {
         alert("Result: \n"+Subtract.calculate(baton),"information");
       }
-      else if(command.equals("multiply"))
+      else if(command.equals("multiply") || command.equals("*"))
       {
         alert("Result: \n"+Multiply.calculate(baton),"information");
       }
-      else if(command.equals("divide"))
+      else if(command.equals("divide") || command.equals("/"))
       {
         alert("Result: \n"+Divide.calculate(baton),"information");
       }
-      else if(command.equals("power"))
+      else if(command.equals("power") || command.equals("pow") || command.equals("^"))
       {
         alert("Result: \n"+Power.calculate(baton),"information");
       }
-      else if(command.equals("squareroot"))
+      else if(command.equals("squareroot") || command.equals("sqrt"))
       {
         alert("Result: \n"+Squareroot.calculate(baton),"information");
       }
@@ -141,6 +142,10 @@ public class Calculator
       else if(command.equals("simplify"))
       {
         alert("Result: \n"+Simplify.calculate(baton), "information");
+      }
+      else if(command.equals("count"))
+      {
+        alert("Result: \n"+Count.calculate(baton), "information");
       }
       else if(command.equals("info"))
       {

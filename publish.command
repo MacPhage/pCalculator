@@ -11,6 +11,7 @@ javac -d . -sourcepath . Function/QuadraticFormula.java
 javac -d . -sourcepath . Function/GreatestCommonDivisor.java
 javac -d . -sourcepath . Function/LeastCommonMultiple.java
 javac -d . -sourcepath . Function/Simplify.java
+javac -d . -sourcepath . Function/Count.java
 javac Calculator.java
 jar cfm ../bin/pCalculator-snapshot.jar Manifest.txt Calculator.class Function/*.class res/icon_1024.png
 
