@@ -51,6 +51,7 @@ public class Debug
       config.setProperty("displayDebug", "yes");
       config.setProperty("alertAlwaysAs", "pass");
       config.setProperty("defaultCommand","help");
+      config.setProperty("seperator",Character.toString('\u1337'));
       config.store(output, null);
     }
     catch (IOException io)
@@ -205,6 +206,40 @@ public class Debug
         }
       }
     }
+  }
+  public static String sep()
+  {
+    return Character.toString('\u1337');
+    /*
+    Properties prop = new Properties();
+    InputStream input = null;
+    try
+    {
+      input = new FileInputStream("pcalculator.properties");
+      prop.load(input);
+      String type = prop.getProperty("sep");
+      return type;
+    }
+    catch (IOException ex)
+    {
+    ex.printStackTrace();
+    return Character.toString('\u1337');
+    }
+    finally
+    {
+      if (input != null)
+      {
+        try
+        {
+          input.close();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+          return Character.toString('\u1337');
+        }
+      }
+    }*/
   }
 
 }

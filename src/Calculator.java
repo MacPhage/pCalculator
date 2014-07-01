@@ -87,6 +87,8 @@ public class Calculator
       tempList = new ArrayList<String>(Arrays.asList(input));
       tempList.remove(0);
       baton = (String[]) tempList.toArray(baton);
+      String end = "";
+      String fin[];
       /*
       Using a String Array means we can store all potential input in one "baton".
       When we pass the baton, the class method .calculate() uses it how it wants to,
@@ -101,51 +103,53 @@ public class Calculator
 
       if(command.equals("add") || command.equals("+"))
       {
-        alert("Result: \n"+Add.calculate(baton),"information");
+        end = Add.calculate(baton);
+        fin = end.split(Debug.sep());
+        message("Result: \n"+fin[0],fin[1]);
       }
       else if(command.equals("subtract") || command.equals("-"))
       {
-        alert("Result: \n"+Subtract.calculate(baton),"information");
+        message("Result: \n",Subtract.calculate(baton));
       }
       else if(command.equals("multiply") || command.equals("*"))
       {
-        alert("Result: \n"+Multiply.calculate(baton),"information");
+        message("Result: \n",Multiply.calculate(baton));
       }
       else if(command.equals("divide") || command.equals("/"))
       {
-        alert("Result: \n"+Divide.calculate(baton),"information");
+        message("Result: \n",Divide.calculate(baton));
       }
       else if(command.equals("power") || command.equals("pow") || command.equals("^"))
       {
-        alert("Result: \n"+Power.calculate(baton),"information");
+        message("Result: \n",Power.calculate(baton));
       }
       else if(command.equals("squareroot") || command.equals("sqrt"))
       {
-        alert("Result: \n"+Squareroot.calculate(baton),"information");
+        message("Result: \n",Squareroot.calculate(baton));
       }
       else if(command.equals("factorial"))
       {
-        alert("Result: \n"+Factorial.calculate(baton), "information");
+        message("Result: \n",Factorial.calculate(baton));
       }
       else if(command.equals("quadraticFormula"))
       {
-        alert("Result: \n"+QuadraticFormula.calculate(baton), "information");
+        message("Result: \n",QuadraticFormula.calculate(baton));
       }
       else if(command.equals("gcd"))
       {
-        alert("Result: \n"+GreatestCommonDivisor.calculate(baton), "information");
+        message("Result: \n",GreatestCommonDivisor.calculate(baton));
       }
       else if(command.equals("lcm"))
       {
-        alert("Result: \n"+LeastCommonMultiple.calculate(baton), "information");
+        message("Result: \n",LeastCommonMultiple.calculate(baton));
       }
       else if(command.equals("simplify"))
       {
-        alert("Result: \n"+Simplify.calculate(baton), "information");
+        message("Result: \n",Simplify.calculate(baton));
       }
       else if(command.equals("count"))
       {
-        alert("Result: \n"+Count.calculate(baton), "information");
+        message("Result: \n",Count.calculate(baton));
       }
       else if(command.equals("info"))
       {
@@ -155,9 +159,8 @@ public class Calculator
       {
         showCommands();
       }
-      else if(command.equals("quit"))
+      else if(command.equals("quit") || command.equals("stop") || command.equals("end") || command.equals("close"))
       {
-        //System.exit(0);
         break;
       }
       else if(command.equals("debug"))
@@ -283,6 +286,9 @@ public class Calculator
       JOptionPane.showMessageDialog(null,message,titleText,JOptionPane.PLAIN_MESSAGE);
       System.out.println("Attempted to alert() with invalid type: \'"+type+"\', went with plain instead.");
     }
-
+  }
+  public static void message(String message,String output) //Just like JavaScript :P
+  {
+    JOptionPane.showInputDialog(null,message,output);
   }
 }

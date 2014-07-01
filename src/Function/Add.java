@@ -56,7 +56,7 @@ public class Add
         m += c[i]+", ";
       }
     }
-    m += " equals "+r;
+    m += " equals "+Debug.sep()+Double.toString(r);
     return m;
   }
 
