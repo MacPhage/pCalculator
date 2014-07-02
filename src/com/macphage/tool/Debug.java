@@ -12,7 +12,7 @@
 //  http://srchub.org/u/mac
 //
 
-package Function;
+package com.macphage.tool;
 
 import java.awt.*;
 import javax.swing.*;

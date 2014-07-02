@@ -1,9 +1,9 @@
 //
-//  Power.java
+//  Subtract.java
 //
 //  Java Source File
 //
-//  Created by Austin Jackson,
+//  Created by Austin Jackson
 //
 //  Editted with Atom
 //  https://atom.io/
@@ -12,18 +12,20 @@
 //  http://srchub.org/u/mac
 //
 
-package Function;
+package com.macphage.function;
+
+import com.macphage.tool.Debug;
 
 import java.awt.*;
 import javax.swing.*;
 import java.lang.*;
 
-public class Power
+public class Subtract
 {
-  /* Power
-  // Raises each number in the current index to the power of the next
+  /* Subtract
+  // Subtracts all other numbers from the first number
   */
-  public static String calculate(String[] c)
+  public static String calculate(String[] c) //Input command
   {
     double r; //Result
     try
@@ -33,18 +35,14 @@ public class Power
     catch (Exception e)
     {
       e.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
       return c[0];
     }
     for(int i = 1; i < c.length; i++)
     {
-      //Adds each number in every index together to form the sum
+      //Subtract each number in every index after 0 continuously to form the difference
       try
       {
-        r = Math.pow(r,Double.parseDouble(c[i]));
+        r -= Double.parseDouble(c[i]);
       }
       catch (Exception e)
       {
@@ -58,6 +56,5 @@ public class Power
     }
     return Double.toString(r);
   }
-
 
 }

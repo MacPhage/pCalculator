@@ -12,26 +12,29 @@
 //  http://srchub.org/u/mac
 //
 
+package com.macphage;
+
 import java.awt.*;
 import javax.swing.*;
 import java.util.*;
 import java.io.*;
 import java.text.*;
 
-import Function.Debug;
+import com.macphage.tool.Debug;
+import com.macphage.tool.Variable;
 
-import Function.Add;
-import Function.Subtract;
-import Function.Multiply;
-import Function.Divide;
-import Function.Power;
-import Function.Squareroot;
-import Function.Factorial;
-import Function.QuadraticFormula;
-import Function.GreatestCommonDivisor;
-import Function.LeastCommonMultiple;
-import Function.Simplify;
-import Function.Count;
+import com.macphage.function.Add;
+import com.macphage.function.Subtract;
+import com.macphage.function.Multiply;
+import com.macphage.function.Divide;
+import com.macphage.function.Power;
+import com.macphage.function.Squareroot;
+import com.macphage.function.Factorial;
+import com.macphage.function.QuadraticFormula;
+import com.macphage.function.GreatestCommonDivisor;
+import com.macphage.function.LeastCommonMultiple;
+import com.macphage.function.Simplify;
+import com.macphage.function.Count;
 
 public class Calculator
 {

@@ -1,5 +1,5 @@
 //
-//  Factorial.java
+//  OtherCipher.java
 //
 //  Java Source File
 //
@@ -12,7 +12,9 @@
 //  http://srchub.org/u/mac
 //
 
-package Function; //as
+package com.macphage.function;
+
+import com.macphage.tool.Debug;
 
 import java.awt.*;
 import javax.swing.*;
@@ -20,29 +22,17 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-public class Factorial
+public class OtherFunction
 {
-  /* Factorial
+  /* Name of Function
   // Description of function.
   */
   public static String calculate(String[] c)
   {
-    double a = 0;
-    double b = 1; //Result
-    String r = "";
+    String r = ""; //Result
     try
     {
-      for(int i = 0; i < c.length; i++)
-      {
-        a = Double.parseDouble(c[i]);
-        while(a > 1)
-        {
-          b *= a;
-          a--;
-        }
-        r += "Factorial of "+c[i]+" is "+b+".\n";
-        b = 1;
-      }
+      //Calculations using input
     }
     catch(Exception e)
     {

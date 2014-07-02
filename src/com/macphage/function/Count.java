@@ -1,5 +1,5 @@
 //
-//  Simplify.java
+//  Count.java
 //
 //  Java Source File
 //
@@ -12,7 +12,9 @@
 //  http://srchub.org/u/mac
 //
 
-package Function;
+package com.macphage.function;
+
+import com.macphage.tool.Debug;
 
 import java.awt.*;
 import javax.swing.*;
@@ -20,7 +22,7 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-public class Simplify
+public class Count
 {
   /* Name of Function
   // Description of function.
@@ -28,23 +30,15 @@ public class Simplify
   public static String calculate(String[] c)
   {
     String r = ""; //Result
-    String type = c[0];
-    long a,b,gcd;
     try
     {
-      if(type.equals("fraction"))
+      double from = Double.parseDouble(c[0]); //Supposedly a smaller number
+      double to = Double.parseDouble(c[1]); //Supposedly a larger number
+      double inc = Double.parseDouble(c[2]); //Doesn't matter the size
+      r += "Counting from "+from+" to "+to+", incrementing "+inc+" each time...\n\n";
+      for(double i = from; i < to; i += inc)
       {
-        for(int i = 1; i < c.length; i+=2)
-        {
-          a = Long.parseLong(c[i]);
-          b = Long.parseLong(c[i+1]);
-          gcd = GreatestCommonDivisor.gcd(a, b);
-          r += (c[i]+"/"+c[i+1]+" simplified to "+(a / gcd)+"/"+(b / gcd)+"\n");
-        }
-      }
-      else
-      {
-        r = "I can't simplify those.";
+          r += Double.toString(i)+", ";
       }
     }
     catch(Exception e)

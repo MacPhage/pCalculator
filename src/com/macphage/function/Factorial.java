@@ -1,5 +1,5 @@
 //
-//  OtherCipher.java
+//  Factorial.java
 //
 //  Java Source File
 //
@@ -12,7 +12,9 @@
 //  http://srchub.org/u/mac
 //
 
-package Function;
+package com.macphage.function;
+
+import com.macphage.tool.Debug;
 
 import java.awt.*;
 import javax.swing.*;
@@ -20,23 +22,28 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-public class Count
+public class Factorial
 {
-  /* Name of Function
+  /* Factorial
   // Description of function.
   */
   public static String calculate(String[] c)
   {
-    String r = ""; //Result
+    double a = 0;
+    double b = 1; //Result
+    String r = "";
     try
     {
-      double from = Double.parseDouble(c[0]); //Supposedly a smaller number
-      double to = Double.parseDouble(c[1]); //Supposedly a larger number
-      double inc = Double.parseDouble(c[2]); //Doesn't matter the size
-      r += "Counting from "+from+" to "+to+", incrementing "+inc+" each time...\n\n";
-      for(double i = from; i < to; i += inc)
+      for(int i = 0; i < c.length; i++)
       {
-          r += Double.toString(i)+", ";
+        a = Double.parseDouble(c[i]);
+        while(a > 1)
+        {
+          b *= a;
+          a--;
+        }
+        r += "Factorial of "+c[i]+" is "+b+".\n";
+        b = 1;
       }
     }
     catch(Exception e)

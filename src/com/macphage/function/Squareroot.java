@@ -3,7 +3,8 @@
 //
 //  Java Source File
 //
-//  Created by Austin Jackson
+//  Created by Austin Jackson,
+//  Last modified on June 11, 2014.
 //
 //  Editted with Atom
 //  https://atom.io/
@@ -12,7 +13,9 @@
 //  http://srchub.org/u/mac
 //
 
-package Function;
+package com.macphage.function;
+
+import com.macphage.tool.Debug;
 
 import java.awt.*;
 import javax.swing.*;
@@ -20,17 +23,22 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-public class OtherFunction
+public class Squareroot
 {
-  /* Name of Function
-  // Description of function.
+  /* Squareroot
+  // Finds the squareroot of things
   */
   public static String calculate(String[] c)
   {
-    String r = ""; //Result
+    double a = 0; //Result
+    String r = "";
     try
     {
-      //Calculations using input
+      for(int i = 0; i < c.length; i++)
+      {
+        a = Math.sqrt(Double.parseDouble(c[i]));
+        r += "Squareroot of "+c[i]+" is "+a+".\n";
+      }
     }
     catch(Exception e)
     {
@@ -42,4 +50,5 @@ public class OtherFunction
     }
     return r;
   }
+
 }
