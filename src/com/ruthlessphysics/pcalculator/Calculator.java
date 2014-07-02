@@ -12,7 +12,7 @@
 //  http://srchub.org/u/mac
 //
 
-package com.macphage;
+package com.ruthlessphysics.pcalculator;
 
 import java.awt.*;
 import javax.swing.*;
@@ -20,33 +20,26 @@ import java.util.*;
 import java.io.*;
 import java.text.*;
 
-import com.macphage.tool.Debug;
-import com.macphage.tool.Variable;
+import com.ruthlessphysics.pcalculator.Header;
 
-import com.macphage.function.Add;
-import com.macphage.function.Subtract;
-import com.macphage.function.Multiply;
-import com.macphage.function.Divide;
-import com.macphage.function.Power;
-import com.macphage.function.Squareroot;
-import com.macphage.function.Factorial;
-import com.macphage.function.QuadraticFormula;
-import com.macphage.function.GreatestCommonDivisor;
-import com.macphage.function.LeastCommonMultiple;
-import com.macphage.function.Simplify;
-import com.macphage.function.Count;
+import com.ruthlessphysics.pcalculator.tool.Debug;
+import com.ruthlessphysics.pcalculator.tool.Variable;
+
+import com.ruthlessphysics.pcalculator.function.Add;
+import com.ruthlessphysics.pcalculator.function.Subtract;
+import com.ruthlessphysics.pcalculator.function.Multiply;
+import com.ruthlessphysics.pcalculator.function.Divide;
+import com.ruthlessphysics.pcalculator.function.Power;
+import com.ruthlessphysics.pcalculator.function.Squareroot;
+import com.ruthlessphysics.pcalculator.function.Factorial;
+import com.ruthlessphysics.pcalculator.function.QuadraticFormula;
+import com.ruthlessphysics.pcalculator.function.GreatestCommonDivisor;
+import com.ruthlessphysics.pcalculator.function.LeastCommonMultiple;
+import com.ruthlessphysics.pcalculator.function.Simplify;
+import com.ruthlessphysics.pcalculator.function.Count;
 
 public class Calculator
 {
-  static String titleText = "pCalculator";
-  static String version = "1.1.0, last updated June 20, 2014.";
-  static String changes = "- Added Factorial support\n"+
-  "- Added Quadratic Formula support\n"+
-  "- Added Greatest Common Divisor support\n"+
-  "- Added Least Common Multiple support\n"+
-  "- Added Simplify function (fractions only, for now)\n"+
-  "\n";
-
   public static void main(String args[])
   {
     boolean debug = false;
@@ -156,11 +149,11 @@ public class Calculator
       }
       else if(command.equals("info"))
       {
-        showInfo();
+        Header.showInfo();
       }
       else if(command.equals("?") || command.equals("help"))
       {
-        showCommands();
+        Header.showCommands();
       }
       else if(command.equals("quit") || command.equals("stop") || command.equals("end") || command.equals("close"))
       {
@@ -172,15 +165,15 @@ public class Calculator
         {
           if(baton[0].equals("reset"))
           {
-            alert("Debugging file (pcalculator.properties) will be reset to its default state.","warning");
+            Header.alert("Debugging file (pcalculator.properties) will be reset to its default state.","warning");
           }
           else if(baton[0].equals("delete"))
           {
-            alert("Debugging file (pcalculator.properties) will be deleted if it isn\'t already.","warning");
+            Header.alert("Debugging file (pcalculator.properties) will be deleted if it isn\'t already.","warning");
           }
           else
           {
-            alert("Debugging file (pcalculator.properties) will be created if one doesn\'t exists already.\nDelete it to stop its effects on this program.","warning");
+            Header.alert("Debugging file (pcalculator.properties) will be created if one doesn\'t exists already.\nDelete it to stop its effects on this program.","warning");
           }
           debug = true;
         }
@@ -191,107 +184,14 @@ public class Calculator
           {
             JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
           }
-          alert("Debugging file (pcalculator.properties) will be created if one doesn\'t exists already.\nDelete it to stop its effects on this program.","warning");
+          Header.alert("Debugging file (pcalculator.properties) will be created if one doesn\'t exists already.\nDelete it to stop its effects on this program.","warning");
           debug = true;
         }
       }
       else
       {
-        alert("That wasn\'t a valid command.","warning");
+        Header.alert("That wasn\'t a valid command.","warning");
       }
     }
-  }
-  public static void showInfo()
-  {
-    JOptionPane.showMessageDialog(null,
-    "pCalculator is a light-weight Java application for convenient calculation.\n"+
-    "The functions it supports can be found using the command \"help\".\n"+
-    "\n"+
-    "Version: "+version+"\n"+
-    "Author: Austin Jackson\n"+
-    "Official website: http://srchub.org/p/pcalculator\n"+
-    "Changes in this version: \n"+changes,
-    "About pCalculator",JOptionPane.INFORMATION_MESSAGE);
-  }
-  public static void showCommands()
-  {
-    JOptionPane.showMessageDialog(null,
-    "Guide:\n"+
-    "- List = multiple inputs seperated by spaces\n"+
-    "- Commands ARE case-sensitive! Typing \"add\" is different from \"ADD\"\n"+
-    "\n"+
-    "Commands: (full list at srchub.org/p/pcalculator)\n"+
-    "- Help\n"+
-    "  - Use \"help\"\n"+
-    "- Info\n"+
-    "  - Use \"info\"\n"+
-    "- Add\n"+
-    "  - Use \"add [list]\"\n"+
-    "- Subtract\n"+
-    "  - Use \"subtract [list]\"\n"+
-    "- Multiply\n"+
-    "  - Use \"multiply [list]\"\n"+
-    "- Divide\n"+
-    "  - Use \"divide [list]\"\n"+
-    "- Power\n"+
-    "  - Use \"power [list]\"\n"+
-    "- Squareroot\n"+
-    "  - Use \"squareroot [list]\"\n"+
-    "- Factorial\n"+
-    "  - Use \"factorial [list]\"\n"+
-    "- Quadratic Formula\n"+
-    "  - Use \"quadraticFormula [a] [b] [c]\"\n"+
-    "- Greatest Common Divisor\n"+
-    "  - Use \"gcd [list]\"\n"+
-    "- Least Common Multiple\n"+
-    "  - Use \"lcm [list]\"\n"+
-    "- Simplify\n"+
-    "  - Use \"simplify [type] [list]\"\n"+
-    "  - Valid types: \"fraction, (none)\"\n"+
-    "  - Example: \"simplify fraction 5 10 5 15\"\n"+
-    "\n",
-    "pCalculator Command List",JOptionPane.INFORMATION_MESSAGE);
-  }
-  public static void alert(String message, String type) //Just like JavaScript :P
-  {
-    type = type.toLowerCase();
-    String newType = Debug.alertAlwaysAs();
-    if(newType.equals("pass"))
-    {
-      //Purposely nothing
-    }
-    else
-    {
-      type = newType;
-    }
-    if(type.equals("error"))
-    {
-      JOptionPane.showMessageDialog(null,message,titleText,JOptionPane.ERROR_MESSAGE);
-    }
-    else if(type.equals("information"))
-    {
-      JOptionPane.showMessageDialog(null,message,titleText,JOptionPane.INFORMATION_MESSAGE);
-    }
-    else if(type.equals("warning"))
-    {
-      JOptionPane.showMessageDialog(null,message,titleText,JOptionPane.WARNING_MESSAGE);
-    }
-    else if(type.equals("question"))
-    {
-      JOptionPane.showMessageDialog(null,message,titleText,JOptionPane.QUESTION_MESSAGE);
-    }
-    else if(type.equals("plain"))
-    {
-      JOptionPane.showMessageDialog(null,message,titleText,JOptionPane.PLAIN_MESSAGE);
-    }
-    else
-    {
-      JOptionPane.showMessageDialog(null,message,titleText,JOptionPane.PLAIN_MESSAGE);
-      System.out.println("Attempted to alert() with invalid type: \'"+type+"\', went with plain instead.");
-    }
-  }
-  public static void message(String message,String output) //Just like JavaScript :P
-  {
-    JOptionPane.showInputDialog(null,message,output);
   }
 }

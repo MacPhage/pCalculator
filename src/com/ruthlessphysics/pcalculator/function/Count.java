@@ -1,5 +1,5 @@
 //
-//  Factorial.java
+//  Count.java
 //
 //  Java Source File
 //
@@ -12,9 +12,9 @@
 //  http://srchub.org/u/mac
 //
 
-package com.macphage.function;
+package com.ruthlessphysics.pcalculator.function;
 
-import com.macphage.tool.Debug;
+import com.ruthlessphysics.pcalculator.tool.Debug;
 
 import java.awt.*;
 import javax.swing.*;
@@ -22,28 +22,23 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-public class Factorial
+public class Count
 {
-  /* Factorial
+  /* Name of Function
   // Description of function.
   */
   public static String calculate(String[] c)
   {
-    double a = 0;
-    double b = 1; //Result
-    String r = "";
+    String r = ""; //Result
     try
     {
-      for(int i = 0; i < c.length; i++)
+      double from = Double.parseDouble(c[0]); //Supposedly a smaller number
+      double to = Double.parseDouble(c[1]); //Supposedly a larger number
+      double inc = Double.parseDouble(c[2]); //Doesn't matter the size
+      r += "Counting from "+from+" to "+to+", incrementing "+inc+" each time...\n\n";
+      for(double i = from; i < to; i += inc)
       {
-        a = Double.parseDouble(c[i]);
-        while(a > 1)
-        {
-          b *= a;
-          a--;
-        }
-        r += "Factorial of "+c[i]+" is "+b+".\n";
-        b = 1;
+          r += Double.toString(i)+", ";
       }
     }
     catch(Exception e)

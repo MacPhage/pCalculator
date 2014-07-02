@@ -12,7 +12,7 @@
 //  http://srchub.org/u/mac
 //
 
-package com.macphage.tool;
+package com.ruthlessphysics.pcalculator.tool;
 
 import java.awt.*;
 import javax.swing.*;

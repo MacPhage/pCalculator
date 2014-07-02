@@ -1,5 +1,5 @@
 //
-//  Multiply.java
+//  Divide.java
 //
 //  Java Source File
 //
@@ -12,23 +12,22 @@
 //  http://srchub.org/u/mac
 //
 
-package com.macphage.function;
+package com.ruthlessphysics.pcalculator.function;
 
-import com.macphage.tool.Debug;
+import com.ruthlessphysics.pcalculator.tool.Debug;
 
 import java.awt.*;
 import javax.swing.*;
 import java.util.*;
 
-public class Multiply
+public class Divide
 {
-  /* Multiply
-  // Finds the product of all the items in the given array
+  /* Divide
+  // Finds the quotient of all the items in the given array
   */
   public static String calculate(String[] c)
   {
     double r; //Result
-    String m = "The product of "+c[0]+", ";
     try
     {
       r = Double.parseDouble(c[0]); //Result;
@@ -42,12 +41,14 @@ public class Multiply
       }
       return c[0];
     }
+
     for(int i = 1; i < c.length; i++)
     {
       //Adds each number in every index together to form the sum
       try
       {
-        r *= Double.parseDouble(c[i]);
+
+        r /= Double.parseDouble(c[i]);
       }
       catch (Exception e)
       {
@@ -58,21 +59,10 @@ public class Multiply
         }
         break;
       }
-      if(c.length-i == 2) //Make a message of the end result while it's being calculated
-      {
-        m += c[i]+", and ";
-      }
-      else if(c.length-i == 1)
-      {
-        m += c[i];
-      }
-      else
-      {
-        m += c[i]+", ";
-      }
     }
-    m += " equals "+r;
-    return m;
+    return Double.toString(r);
   }
+
+
 
 }
