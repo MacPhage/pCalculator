@@ -20,4 +20,20 @@ cd bin
 
 jar cfm pCalculator-snapshot.jar ../Manifest.txt com/ruthlessphysics/pcalculator/* com/ruthlessphysics/pcalculator/function/* com/ruthlessphysics/pcalculator/tool/*
 
+cd com/ruthlessphysics/pcalculator/
+rm *
+cd function
+rm *
+cd ..
+cd tool
+rm *
+cd ..
+rmdir function
+rmdir tool
+cd ..
+rmdir pcalculator
+cd ..
+rmdir ruthlessphysics
+cd ..
+rmdir com
 
