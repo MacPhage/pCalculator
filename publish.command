@@ -1,20 +1,23 @@
 cd ~/Documents/Git/pCalculator/
-javac -d bin -cp bin -sourcepath . src/com/macphage/tool/Debug.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/tool/Variable.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/Add.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/Subtract.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/Multiply.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/Divide.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/Power.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/Squareroot.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/Factorial.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/QuadraticFormula.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/GreatestCommonDivisor.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/LeastCommonMultiple.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/Simplify.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/function/Count.java
-javac -d bin -cp bin -sourcepath . src/com/macphage/Calculator.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/tool/Debug.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/tool/Variable.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Add.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Subtract.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Multiply.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Divide.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Power.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Squareroot.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Factorial.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/QuadraticFormula.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/GreatestCommonDivisor.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/LeastCommonMultiple.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Simplify.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Count.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/Header.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/Calculator.java
 
-jar cfm bin/pCalculator-snapshot.jar Manifest.txt com/macphage/Calculator.class com/macphage/function/*.class com/macphage/tool/*.class
+cd bin
+
+jar cfm pCalculator-snapshot.jar ../Manifest.txt com/ruthlessphysics/pcalculator/* com/ruthlessphysics/pcalculator/function/* com/ruthlessphysics/pcalculator/tool/*
 
 

@@ -84,7 +84,7 @@ public class Calculator
       tempList.remove(0);
       baton = (String[]) tempList.toArray(baton);
       String end = "";
-      String fin[];
+      String[] fin;
       /*
       Using a String Array means we can store all potential input in one "baton".
       When we pass the baton, the class method .calculate() uses it how it wants to,
@@ -101,51 +101,51 @@ public class Calculator
       {
         end = Add.calculate(baton);
         fin = end.split(Debug.sep());
-        message("Result: \n"+fin[0],fin[1]);
+        Header.message("Result: \n"+fin[0],fin[1]);
       }
       else if(command.equals("subtract") || command.equals("-"))
       {
-        message("Result: \n",Subtract.calculate(baton));
+        Header.message("Result: \n",Subtract.calculate(baton));
       }
       else if(command.equals("multiply") || command.equals("*"))
       {
-        message("Result: \n",Multiply.calculate(baton));
+        Header.message("Result: \n",Multiply.calculate(baton));
       }
       else if(command.equals("divide") || command.equals("/"))
       {
-        message("Result: \n",Divide.calculate(baton));
+        Header.message("Result: \n",Divide.calculate(baton));
       }
       else if(command.equals("power") || command.equals("pow") || command.equals("^"))
       {
-        message("Result: \n",Power.calculate(baton));
+        Header.message("Result: \n",Power.calculate(baton));
       }
       else if(command.equals("squareroot") || command.equals("sqrt"))
       {
-        message("Result: \n",Squareroot.calculate(baton));
+        Header.message("Result: \n",Squareroot.calculate(baton));
       }
       else if(command.equals("factorial"))
       {
-        message("Result: \n",Factorial.calculate(baton));
+        Header.message("Result: \n",Factorial.calculate(baton));
       }
       else if(command.equals("quadraticFormula"))
       {
-        message("Result: \n",QuadraticFormula.calculate(baton));
+        Header.message("Result: \n",QuadraticFormula.calculate(baton));
       }
       else if(command.equals("gcd"))
       {
-        message("Result: \n",GreatestCommonDivisor.calculate(baton));
+        Header.message("Result: \n",GreatestCommonDivisor.calculate(baton));
       }
       else if(command.equals("lcm"))
       {
-        message("Result: \n",LeastCommonMultiple.calculate(baton));
+        Header.message("Result: \n",LeastCommonMultiple.calculate(baton));
       }
       else if(command.equals("simplify"))
       {
-        message("Result: \n",Simplify.calculate(baton));
+        Header.message("Result: \n",Simplify.calculate(baton));
       }
       else if(command.equals("count"))
       {
-        message("Result: \n",Count.calculate(baton));
+        Header.message("Result: \n",Count.calculate(baton));
       }
       else if(command.equals("info"))
       {

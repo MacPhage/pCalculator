@@ -13,9 +13,9 @@
 //  http://srchub.org/u/mac
 //
 
-package com.macphage.function;
+package com.ruthlessphysics.pcalculator.function;
 
-import com.macphage.tool.Debug;
+import com.ruthlessphysics.pcalculator.tool.Debug;
 
 import java.awt.*;
 import javax.swing.*;

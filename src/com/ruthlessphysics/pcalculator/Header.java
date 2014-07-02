@@ -14,6 +14,8 @@
 
 package com.ruthlessphysics.pcalculator;
 
+import com.ruthlessphysics.pcalculator.tool.Debug;
+
 import java.awt.*;
 import javax.swing.*;
 import java.lang.*;
