@@ -44,10 +44,7 @@ public class Var
     catch (IOException ex)
     {
       ex.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,ex.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(ex);
     }
     try
     {
@@ -59,6 +56,7 @@ public class Var
     catch (IOException io)
     {
       io.printStackTrace();
+      Debug.displayError(io);
     }
     finally
     {
@@ -71,6 +69,7 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
+          Debug.displayError(e);
         }
       }
     }
@@ -90,10 +89,7 @@ public class Var
     catch (IOException ex)
     {
       ex.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,ex.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(ex);
     }
     try
     {
@@ -105,6 +101,7 @@ public class Var
     catch (IOException io)
     {
       io.printStackTrace();
+      Debug.displayError(io);
       return false;
     }
     finally
@@ -118,6 +115,7 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
+          Debug.displayError(e);
           return false;
         }
       }
@@ -139,6 +137,7 @@ public class Var
     catch (IOException ex)
     {
       ex.printStackTrace();
+      Debug.displayError(ex);
       return err;
     }
     finally
@@ -152,10 +151,7 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
-          if(Debug.displayDebug())
-          {
-            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-          }
+          Debug.displayError(e);
           return err;
         }
       }
@@ -182,6 +178,7 @@ public class Var
     catch (IOException io)
     {
       io.printStackTrace();
+      Debug.displayError(io);
       return false;
     }
     finally
@@ -195,10 +192,7 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
-          if(Debug.displayDebug())
-          {
-            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-          }
+          Debug.displayError(e);
         }
       }
     }
@@ -223,6 +217,7 @@ public class Var
     catch (IOException io)
     {
       io.printStackTrace();
+      Debug.displayError(io);
       return false;
     }
     finally
@@ -236,10 +231,7 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
-          if(Debug.displayDebug())
-          {
-            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-          }
+          Debug.displayError(e);
         }
       }
     }
@@ -269,10 +261,6 @@ public class Var
     }
     catch(Exception e)
     {
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
       return false;
     }
   }
@@ -304,10 +292,6 @@ public class Var
     }
     catch(Exception e)
     {
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
       check_d = false;
     }
     try
@@ -324,10 +308,6 @@ public class Var
     }
     catch(Exception e)
     {
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
       check_l = false;
     }
 
@@ -372,10 +352,7 @@ public class Var
     catch (IOException ex)
     {
       ex.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,ex.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(ex);
       return false;
     }
     finally
@@ -389,10 +366,7 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
-          if(Debug.displayDebug())
-          {
-            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-          }
+          Debug.displayError(e);
           return false;
         }
       }
@@ -409,10 +383,7 @@ public class Var
     catch(Exception e)
     {
       e.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(e);
       return 0.0;
     }
   }
@@ -427,10 +398,7 @@ public class Var
     catch(Exception e)
     {
       e.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(e);
       return 0;
     }
   }
@@ -445,10 +413,7 @@ public class Var
     catch(Exception e)
     {
       e.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(e);
       return 0L;
     }
   }
@@ -512,10 +477,7 @@ public class Var
     catch(Exception e)
     {
       e.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(e);
     }
   }
 

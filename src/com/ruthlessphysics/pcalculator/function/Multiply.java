@@ -36,10 +36,7 @@ public class Multiply
     catch (Exception e)
     {
       e.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(e);
       return c[0];
     }
     for(int i = 1; i < c.length; i++)
@@ -52,10 +49,7 @@ public class Multiply
       catch (Exception e)
       {
         e.printStackTrace();
-        if(Debug.displayDebug())
-        {
-          JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-        }
+        Debug.displayError(e);
         break;
       }
       if(c.length-i == 2) //Make a message of the end result while it's being calculated

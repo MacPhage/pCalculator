@@ -186,10 +186,7 @@ public class Header //A header file? What is this, C++?
     catch(Exception e)
     {
       e.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(e);
       return input;
     }
   }

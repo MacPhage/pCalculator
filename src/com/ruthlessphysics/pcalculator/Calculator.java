@@ -64,7 +64,7 @@ public class Calculator
         {
           try
           {
-            File fileTemp = new File("pcalculator.properties");
+            File fileTemp = new File("pcalculator-debug.properties");
             if (fileTemp.exists())
             {
               fileTemp.delete();
@@ -73,10 +73,7 @@ public class Calculator
           catch(Exception e)
           {
             e.printStackTrace();
-            if(Debug.displayDebug())
-            {
-              JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-            }
+            Debug.displayError(e);
           }
         }
         debug = false;
@@ -200,10 +197,7 @@ public class Calculator
         catch (Exception e)
         {
           e.printStackTrace();
-          if(Debug.displayDebug())
-          {
-            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-          }
+          Debug.displayError(e);
           Header.alert("Debugging file (pcalculator.properties) will be created if one doesn\'t exists already.\nDelete it to stop its effects on this program.","warning");
           debug = true;
         }

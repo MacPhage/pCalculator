@@ -32,7 +32,6 @@ public class Add
   public static String calculate(String[] c) //Input command
   {
     double var = 0.0;
-    double addTo = 0.0;
     String choose = "default";
     double r = 0; //Result
     String m = "The sum of ";
@@ -51,10 +50,7 @@ public class Add
       catch (Exception e)
       {
         e.printStackTrace();
-        if(Debug.displayDebug())
-        {
-          JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-        }
+        Debug.displayError(e);
       }
       if(choose.equals("default"))
       {
@@ -65,17 +61,14 @@ public class Add
         catch (Exception e)
         {
           e.printStackTrace();
-          if(Debug.displayDebug())
-          {
-            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-          }
+          Debug.displayError(e);
         }
       }
       if(c.length-i == 2) //Make a message of the end result while it's being calculated
       {
         if(choose.equals("var"))
         {
-          m += "(variable)";
+          m += "(variable) ";
         }
         m += c[i]+", and ";
       }
@@ -83,7 +76,7 @@ public class Add
       {
         if(choose.equals("var"))
         {
-          m += "(variable)";
+          m += "(variable) ";
         }
         m += c[i];
       }
@@ -91,7 +84,7 @@ public class Add
       {
         if(choose.equals("var"))
         {
-          m += "(variable)";
+          m += "(variable) ";
         }
         m += c[i]+", ";
       }

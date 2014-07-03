@@ -43,10 +43,7 @@ public class Squareroot
     catch(Exception e)
     {
       e.printStackTrace();
-      if(Debug.displayDebug() == true)
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(e);
     }
     return r;
   }

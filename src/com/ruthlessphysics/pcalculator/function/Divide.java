@@ -35,10 +35,7 @@ public class Divide
     catch (Exception e)
     {
       e.printStackTrace();
-      if(Debug.displayDebug())
-      {
-        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-      }
+      Debug.displayError(e);
       return c[0];
     }
 

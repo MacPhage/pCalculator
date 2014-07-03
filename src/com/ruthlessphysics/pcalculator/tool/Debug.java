@@ -41,6 +41,27 @@ catch (Exception e)
 
 public class Debug
 {
+  public static void println(String text)
+  {
+    if(shouldLog())
+    {
+      System.out.println("[Debug.java]: "+text);
+    }
+  }
+  public static void print(String text)
+  {
+    if(shouldLog())
+    {
+      System.out.print(text);
+    }
+  }
+  public static void displayError(Exception e)
+  {
+    if(displayDebug())
+    {
+      JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+    }
+  }
   public static void setDefault()
   {
     Properties config = new Properties();
@@ -51,6 +72,7 @@ public class Debug
       config.setProperty("displayDebug", "yes");
       config.setProperty("alertAlwaysAs", "pass");
       config.setProperty("defaultCommand","help");
+      config.setProperty("shouldLog","yes");
       config.setProperty("seperator",Character.toString('\u1337'));
       config.store(output, null);
     }
@@ -185,6 +207,45 @@ public class Debug
       input = new FileInputStream("pcalculator-debug.properties");
       prop.load(input);
       return true;
+    }
+    catch (IOException ex)
+    {
+    ex.printStackTrace();
+    return false;
+    }
+    finally
+    {
+      if (input != null)
+      {
+        try
+        {
+          input.close();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+          return false;
+        }
+      }
+    }
+  }
+  public static boolean shouldLog()
+  {
+    Properties prop = new Properties();
+    InputStream input = null;
+    try
+    {
+      input = new FileInputStream("pcalculator-debug.properties");
+      prop.load(input);
+      String should = prop.getProperty("shouldLog");
+      if(should.equals("yes"))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
     }
     catch (IOException ex)
     {
