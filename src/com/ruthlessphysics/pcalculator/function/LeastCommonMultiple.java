@@ -1,5 +1,5 @@
 //
-//  OtherCipher.java
+//  LeastCommonMultiple.java
 //
 //  Java Source File
 //

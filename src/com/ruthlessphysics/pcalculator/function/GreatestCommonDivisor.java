@@ -1,5 +1,5 @@
 //
-//  OtherCipher.java
+//  GreatestCommonDivisor.java
 //
 //  Java Source File
 //

@@ -1,5 +1,5 @@
 //
-//  OtherCipher.java
+//  Squareroot.java
 //
 //  Java Source File
 //
@@ -30,7 +30,7 @@ public class Squareroot
   */
   public static String calculate(String[] c)
   {
-    double a = 0; //Result
+    double a = 0.0; //Result
     String r = "";
     try
     {

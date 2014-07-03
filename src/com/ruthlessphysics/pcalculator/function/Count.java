@@ -24,8 +24,8 @@ import java.util.*;
 
 public class Count
 {
-  /* Name of Function
-  // Description of function.
+  /* Count
+  // Used for counting, duh
   */
   public static String calculate(String[] c)
   {

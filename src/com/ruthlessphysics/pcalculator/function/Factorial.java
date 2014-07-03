@@ -25,7 +25,7 @@ import java.util.*;
 public class Factorial
 {
   /* Factorial
-  // Description of function.
+  // Finds the factorial of things
   */
   public static String calculate(String[] c)
   {

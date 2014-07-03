@@ -23,7 +23,7 @@ import java.text.*;
 import com.ruthlessphysics.pcalculator.Header;
 
 import com.ruthlessphysics.pcalculator.tool.Debug;
-import com.ruthlessphysics.pcalculator.tool.Variable;
+import com.ruthlessphysics.pcalculator.tool.Var;
 
 import com.ruthlessphysics.pcalculator.function.Add;
 import com.ruthlessphysics.pcalculator.function.Subtract;
@@ -37,11 +37,15 @@ import com.ruthlessphysics.pcalculator.function.GreatestCommonDivisor;
 import com.ruthlessphysics.pcalculator.function.LeastCommonMultiple;
 import com.ruthlessphysics.pcalculator.function.Simplify;
 import com.ruthlessphysics.pcalculator.function.Count;
+import com.ruthlessphysics.pcalculator.function.NRoot;
 
 public class Calculator
 {
   public static void main(String args[])
   {
+
+    Var.setup();
+
     boolean debug = false;
 
     String[] input = {"",""}; //Direct input from JOptionPane, then splitted
@@ -97,55 +101,67 @@ public class Calculator
       per Function Class.
       */
 
-      if(command.equals("add") || command.equals("+"))
+      /*if(command.equals("add") || command.equals("+"))
       {
         end = Add.calculate(baton);
         fin = end.split(Debug.sep());
         Header.message("Result: \n"+fin[0],fin[1]);
+      }*/
+      if(command.equals("add") || command.equals("+"))
+      {
+        Header.alert("Result: \n"+Add.calculate(baton));
       }
       else if(command.equals("subtract") || command.equals("-"))
       {
-        Header.message("Result: \n",Subtract.calculate(baton));
+        Header.alert("Result: \n"+Subtract.calculate(baton));
       }
       else if(command.equals("multiply") || command.equals("*"))
       {
-        Header.message("Result: \n",Multiply.calculate(baton));
+        Header.alert("Result: \n"+Multiply.calculate(baton));
       }
       else if(command.equals("divide") || command.equals("/"))
       {
-        Header.message("Result: \n",Divide.calculate(baton));
+        Header.alert("Result: \n"+Divide.calculate(baton));
       }
       else if(command.equals("power") || command.equals("pow") || command.equals("^"))
       {
-        Header.message("Result: \n",Power.calculate(baton));
+        Header.alert("Result: \n"+Power.calculate(baton));
       }
       else if(command.equals("squareroot") || command.equals("sqrt"))
       {
-        Header.message("Result: \n",Squareroot.calculate(baton));
+        Header.alert("Result: \n"+Squareroot.calculate(baton));
       }
       else if(command.equals("factorial"))
       {
-        Header.message("Result: \n",Factorial.calculate(baton));
+        Header.alert("Result: \n"+Factorial.calculate(baton));
       }
       else if(command.equals("quadraticFormula"))
       {
-        Header.message("Result: \n",QuadraticFormula.calculate(baton));
+        Header.alert("Result: \n"+QuadraticFormula.calculate(baton));
       }
       else if(command.equals("gcd"))
       {
-        Header.message("Result: \n",GreatestCommonDivisor.calculate(baton));
+        Header.alert("Result: \n"+GreatestCommonDivisor.calculate(baton));
       }
       else if(command.equals("lcm"))
       {
-        Header.message("Result: \n",LeastCommonMultiple.calculate(baton));
+        Header.alert("Result: \n"+LeastCommonMultiple.calculate(baton));
       }
       else if(command.equals("simplify"))
       {
-        Header.message("Result: \n",Simplify.calculate(baton));
+        Header.alert("Result: \n"+Simplify.calculate(baton));
       }
       else if(command.equals("count"))
       {
-        Header.message("Result: \n",Count.calculate(baton));
+        Header.alert("Result: \n"+Count.calculate(baton));
+      }
+      else if(command.equals("nroot"))
+      {
+        Header.alert("Result: \n"+NRoot.calculate(baton));
+      }
+      else if(command.equals("variable") || command.equals("var"))
+      {
+        Var.menu(baton);
       }
       else if(command.equals("info"))
       {

@@ -1,5 +1,5 @@
 //
-//  Simplify.java
+//  OtherFunction.java
 //
 //  Java Source File
 //
@@ -22,31 +22,25 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-public class Simplify
+public class NRoot
 {
-  /* Simplify
-  // Simplifies things (fractions only right now)
+  /* NRoot
+  // Finds the specified root of a number, for example, a squareroot of 4 would be 2root of 4.
   */
   public static String calculate(String[] c)
   {
+    double a = 0.0;
+    double b = 0.0;
+    double root = 0.0;
     String r = ""; //Result
-    String type = c[0];
-    long a,b,gcd;
     try
     {
-      if(type.equals("fraction"))
+      for(int i = 0; i < c.length; i+=2)
       {
-        for(int i = 1; i < c.length; i+=2)
-        {
-          a = Long.parseLong(c[i]);
-          b = Long.parseLong(c[i+1]);
-          gcd = GreatestCommonDivisor.gcd(a, b);
-          r += (c[i]+"/"+c[i+1]+" simplified to "+(a / gcd)+"/"+(b / gcd)+"\n");
-        }
-      }
-      else
-      {
-        r = "I can't simplify those.";
+        a = Double.parseDouble(c[i]);
+        b = Double.parseDouble(c[i+1]);
+        root = Math.pow(Math.abs(b), (1.0 / a));
+        r += Double.toString(a)+"root of "+Double.toString(b)+" is "+root+".\n";
       }
     }
     catch(Exception e)

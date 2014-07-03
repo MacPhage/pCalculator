@@ -15,6 +15,8 @@
 package com.ruthlessphysics.pcalculator.function;
 
 import com.ruthlessphysics.pcalculator.tool.Debug;
+import com.ruthlessphysics.pcalculator.tool.Var;
+import com.ruthlessphysics.pcalculator.Header;
 
 import java.awt.*;
 import javax.swing.*;
@@ -29,6 +31,9 @@ public class Add
   */
   public static String calculate(String[] c) //Input command
   {
+    double var = 0.0;
+    double addTo = 0.0;
+    String choose = "default";
     double r = 0; //Result
     String m = "The sum of ";
     for(int i = 0; i < c.length; i++)
@@ -36,7 +41,12 @@ public class Add
       //Adds each number in every index together to form the sum
       try
       {
-        r += Double.parseDouble(c[i]);
+        if(Var.isOccupied(c[i]) && Var.isValidDouble(Var.getVar(c[i])))
+        {
+          var = Var.d(Var.getVar(c[i]));
+          r += var;
+          choose = "var";
+        }
       }
       catch (Exception e)
       {
@@ -45,22 +55,49 @@ public class Add
         {
           JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
         }
-        break;
+      }
+      if(choose.equals("default"))
+      {
+        try
+        {
+          r += Double.parseDouble(c[i]);
+        }
+        catch (Exception e)
+        {
+          e.printStackTrace();
+          if(Debug.displayDebug())
+          {
+            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+          }
+        }
       }
       if(c.length-i == 2) //Make a message of the end result while it's being calculated
       {
+        if(choose.equals("var"))
+        {
+          m += "(variable)";
+        }
         m += c[i]+", and ";
       }
       else if(c.length-i == 1)
       {
+        if(choose.equals("var"))
+        {
+          m += "(variable)";
+        }
         m += c[i];
       }
       else
       {
+        if(choose.equals("var"))
+        {
+          m += "(variable)";
+        }
         m += c[i]+", ";
       }
+      choose = "default";
     }
-    m += " equals "+Debug.sep()+Double.toString(r);
+    m += " equals "+Double.toString(r);
     return m;
   }
 

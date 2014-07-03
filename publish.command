@@ -1,6 +1,7 @@
 cd ~/Documents/Git/pCalculator/
 javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/tool/Debug.java
-javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/tool/Variable.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/Header.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/tool/Var.java
 javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Add.java
 javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Subtract.java
 javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Multiply.java
@@ -13,7 +14,10 @@ javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/
 javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/LeastCommonMultiple.java
 javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Simplify.java
 javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Count.java
-javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/Header.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/NRoot.java
+javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/function/Logarithm.java
+
+
 javac -d bin -cp bin -sourcepath . src/com/ruthlessphysics/pcalculator/Calculator.java
 
 cd bin

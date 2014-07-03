@@ -47,7 +47,7 @@ public class Debug
     OutputStream output = null;
     try
     {
-      output = new FileOutputStream("pcalculator.properties");
+      output = new FileOutputStream("pcalculator-debug.properties");
       config.setProperty("displayDebug", "yes");
       config.setProperty("alertAlwaysAs", "pass");
       config.setProperty("defaultCommand","help");
@@ -79,7 +79,7 @@ public class Debug
 	  InputStream input = null;
 	  try
     {
-  		input = new FileInputStream("pcalculator.properties");
+  		input = new FileInputStream("pcalculator-debug.properties");
   		prop.load(input);
   		String should = prop.getProperty("displayDebug");
       if(should.equals("yes"))
@@ -118,7 +118,7 @@ public class Debug
     InputStream input = null;
     try
     {
-      input = new FileInputStream("pcalculator.properties");
+      input = new FileInputStream("pcalculator-debug.properties");
       prop.load(input);
       String type = prop.getProperty("alertAlwaysAs");
       return type;
@@ -150,7 +150,7 @@ public class Debug
     InputStream input = null;
     try
     {
-      input = new FileInputStream("pcalculator.properties");
+      input = new FileInputStream("pcalculator-debug.properties");
       prop.load(input);
       String type = prop.getProperty("defaultCommand");
       return type;
@@ -182,7 +182,7 @@ public class Debug
     InputStream input = null;
     try
     {
-      input = new FileInputStream("pcalculator.properties");
+      input = new FileInputStream("pcalculator-debug.properties");
       prop.load(input);
       return true;
     }
@@ -207,39 +207,4 @@ public class Debug
       }
     }
   }
-  public static String sep()
-  {
-    return Character.toString('\u1337');
-    /*
-    Properties prop = new Properties();
-    InputStream input = null;
-    try
-    {
-      input = new FileInputStream("pcalculator.properties");
-      prop.load(input);
-      String type = prop.getProperty("sep");
-      return type;
-    }
-    catch (IOException ex)
-    {
-    ex.printStackTrace();
-    return Character.toString('\u1337');
-    }
-    finally
-    {
-      if (input != null)
-      {
-        try
-        {
-          input.close();
-        }
-        catch (IOException e)
-        {
-          e.printStackTrace();
-          return Character.toString('\u1337');
-        }
-      }
-    }*/
-  }
-
 }
