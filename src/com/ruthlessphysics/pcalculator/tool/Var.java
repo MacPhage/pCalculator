@@ -29,16 +29,32 @@ public class Var
   // Provides the methods to manage variables
   */
   static String err = "error";
+
   public static void setup()
   {
-    Properties config = new Properties();
+    Properties prop = new Properties();
     OutputStream output = null;
+    InputStream input = null;
+    String state = "";
+    try
+    {
+      input = new FileInputStream("pcalculator-variables.properties");
+      prop.load(input);
+    }
+    catch (IOException ex)
+    {
+      ex.printStackTrace();
+      if(Debug.displayDebug())
+      {
+        JOptionPane.showMessageDialog(null,ex.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+      }
+    }
     try
     {
       output = new FileOutputStream("pcalculator-variables.properties");
-      config.setProperty("E", Double.toString(Math.E));
-      config.setProperty("PI", Double.toString(Math.PI));
-      config.store(output, null);
+      prop.setProperty("E", Double.toString(Math.E));
+      prop.setProperty("PI", Double.toString(Math.PI));
+      prop.store(output, null);
     }
     catch (IOException io)
     {
@@ -60,21 +76,31 @@ public class Var
     }
   }
 
-  public static boolean setVar(String id,String value)
+  public static boolean setVar(String id, String value)
   {
-    id = Header.trim(id);
-    value = Header.trim(value);
-    Properties config = new Properties();
+    Properties prop = new Properties();
     OutputStream output = null;
+    InputStream input = null;
+    String state = "";
     try
     {
-      if(isOccupied(id) == false)
+      input = new FileInputStream("pcalculator-variables.properties");
+      prop.load(input);
+    }
+    catch (IOException ex)
+    {
+      ex.printStackTrace();
+      if(Debug.displayDebug())
       {
-        output = new FileOutputStream("pcalculator-variables.properties");
-        config.setProperty(id, value);
-        config.store(output, null);
-        return true;
+        JOptionPane.showMessageDialog(null,ex.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
       }
+    }
+    try
+    {
+      output = new FileOutputStream("pcalculator-variables.properties");
+      prop.setProperty(id,value);
+      prop.store(output, null);
+      return true;
     }
     catch (IOException io)
     {
@@ -92,10 +118,11 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
+          return false;
         }
       }
     }
-    return false;
+
   }
   public static String getVar(String id)
   {
@@ -125,6 +152,10 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
+          if(Debug.displayDebug())
+          {
+            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+          }
           return err;
         }
       }
@@ -164,6 +195,10 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
+          if(Debug.displayDebug())
+          {
+            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+          }
         }
       }
     }
@@ -201,6 +236,10 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
+          if(Debug.displayDebug())
+          {
+            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+          }
         }
       }
     }
@@ -230,6 +269,10 @@ public class Var
     }
     catch(Exception e)
     {
+      if(Debug.displayDebug())
+      {
+        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+      }
       return false;
     }
   }
@@ -261,6 +304,10 @@ public class Var
     }
     catch(Exception e)
     {
+      if(Debug.displayDebug())
+      {
+        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+      }
       check_d = false;
     }
     try
@@ -277,6 +324,10 @@ public class Var
     }
     catch(Exception e)
     {
+      if(Debug.displayDebug())
+      {
+        JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+      }
       check_l = false;
     }
 
@@ -321,6 +372,10 @@ public class Var
     catch (IOException ex)
     {
       ex.printStackTrace();
+      if(Debug.displayDebug())
+      {
+        JOptionPane.showMessageDialog(null,ex.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+      }
       return false;
     }
     finally
@@ -334,6 +389,10 @@ public class Var
         catch (IOException e)
         {
           e.printStackTrace();
+          if(Debug.displayDebug())
+          {
+            JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
+          }
           return false;
         }
       }
@@ -398,16 +457,27 @@ public class Var
   {
     try
     {
-      if(c[0].equals("add"))
+      if(c.length < 2)
       {
-        if(setVar(c[1],c[2]))
+        Header.alert("You need to enter a command after that!\n");
+      }
+      else if(c[0].equals("set"))
+      {
+        if(isOccupied(c[1]))
         {
-          Header.alert("Variable \'"+c[1]+"\' was successfully set.");
+          String old = getVar(c[1]);
+          if(forceSetVar(c[1],c[2]))
+          {
+            Header.alert("Variable \'"+c[1]+"\' was successfully changed from "+old+
+            " to "+c[2]+" .");
+          }
         }
         else
         {
-          Header.alert("Variable \'"+c[1]+"\' is already occupied.\n"+
-          "You can change it with \'var change "+c[1]+"\'");
+          if(setVar(c[1],c[2]))
+          {
+            Header.alert("Variable \'"+c[1]+"\' was successfully set as "+c[2]+".");
+          }
         }
       }
       else if(c[0].equals("remove"))
@@ -421,21 +491,17 @@ public class Var
           Header.alert("A problem removing Variable \'"+c[1]+"\' occured.\n");
         }
       }
-      else if(c[0].equals("change"))
+
+      else if(c[0].equals("get"))
       {
+
         if(isOccupied(c[1]))
         {
-          String old = getVar(c[1]);
-          if(forceSetVar(c[1],c[2]))
-          {
-            Header.alert("Variable \'"+c[1]+"\' was successfully changed from "+old+
-            " to "+c[2]+" .");
-          }
+          Header.alert("Variable under "+c[1]+" is "+getVar(c[1]));
         }
         else
         {
-          Header.alert("Variable \'"+c[1]+"\' hasn\'t been set before.\n"+
-          "You can set it with \'var set "+c[1]+" "+c[2]+"\'");
+          Header.alert("Variable under "+c[1]+" doesn\'t exist.");
         }
       }
       else

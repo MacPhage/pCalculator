@@ -40,7 +40,7 @@ public class NRoot
         a = Double.parseDouble(c[i]);
         b = Double.parseDouble(c[i+1]);
         root = Math.pow(Math.abs(b), (1.0 / a));
-        r += Double.toString(a)+"root of "+Double.toString(b)+" is "+root+".\n";
+        r += "nRoot of degree "+Double.toString(a)+" and degree "+Double.toString(b)+" is "+root+".\n";
       }
     }
     catch(Exception e)

@@ -175,6 +175,10 @@ public class Calculator
       {
         break;
       }
+      else if(command.equals("kill"))
+      {
+        System.exit(0);
+      }
       else if(command.equals("debug"))
       {
         try

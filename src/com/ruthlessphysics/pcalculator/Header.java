@@ -27,11 +27,11 @@ public class Header //A header file? What is this, C++?
 
   static String titleText = "pCalculator";
   static String version = "1.2.0, last updated July 2, 2014.";
-  static String changes = "- Added Factorial support\n"+
-  "- Added Quadratic Formula support\n"+
-  "- Added Greatest Common Divisor support\n"+
-  "- Added Least Common Multiple support\n"+
-  "- Added Simplify function (fractions only, for now)\n"+
+  static String changes = "- Variable functionality\n"+
+  "- NRoot function (find the nth root of things)\n"+
+  "- Count function\n"+
+  "- Added command aliases (\'+ 2 2\' instead of \'add 2 2\')\n"+
+  "- Plenty under-the-hood changes!\n"+
   "\n";
   static String commonType = "information";
 
@@ -89,7 +89,7 @@ public class Header //A header file? What is this, C++?
     "  - Use \"nroot [degree] [radicand]\"\n"+
     "  - Allows for multiple inputs at once.\n"+
     "- Variable\n"+
-    "  - Use \"var [add OR remove OR change] (value)\"\n"+
+    "  - Use \"var [set OR get OR remove] (value)\"\n"+
     "  - Allows you to store constants for mathematical use later.\n"+
     "  - Values stored in \'pcalculator-variables.properties\' and are editable.\n"+
     "\n",
