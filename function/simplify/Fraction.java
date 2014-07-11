@@ -14,12 +14,6 @@ package com.ruthlessphysics.pcalculator.function.simplify;
 import com.ruthlessphysics.util.Debug;
 import com.ruthlessphysics.pcalculator.function.*;
 
-import java.awt.*;
-import javax.swing.*;
-import java.lang.*;
-import java.io.*;
-import java.util.*;
-
 public class Fraction
 {
   /* Simplify
@@ -28,7 +22,6 @@ public class Fraction
   public static String calculate(String[] c)
   {
     String r = ""; //Result
-    String type = c[0];
     long a,b,gcd;
     try
     {

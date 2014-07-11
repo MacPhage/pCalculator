@@ -11,13 +11,9 @@
 
 package com.ruthlessphysics.pcalculator;
 
-import java.awt.*;
-
 import javax.swing.*;
-
 import java.util.*;
 import java.io.*;
-import java.text.*;
 
 import com.ruthlessphysics.util.Debug;
 import com.ruthlessphysics.pcalculator.function.*;
@@ -78,8 +74,6 @@ public class Calculator
       tempList = new ArrayList<String>(Arrays.asList(input));
       tempList.remove(0);
       baton = (String[]) tempList.toArray(baton);
-      String end = "";
-      String[] fin;
       /*
       Using a String Array means we can store all potential input in one "baton".
       When we pass the baton, the class method .calculate() uses it how it wants to,

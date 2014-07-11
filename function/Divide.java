@@ -13,9 +13,7 @@ package com.ruthlessphysics.pcalculator.function;
 
 import com.ruthlessphysics.util.Debug;
 
-import java.awt.*;
-import javax.swing.*;
-import java.util.*;
+
 
 public class Divide
 {
@@ -47,10 +45,7 @@ public class Divide
       catch (Exception e)
       {
         e.printStackTrace();
-        if(Debug.displayDebug())
-        {
-          JOptionPane.showMessageDialog(null,e.getStackTrace(),"pCalculator Error",JOptionPane.ERROR_MESSAGE);
-        }
+        Debug.displayError(e);
         break;
       }
     }

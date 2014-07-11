@@ -14,9 +14,6 @@ package com.ruthlessphysics.pcalculator.tool;
 import com.ruthlessphysics.util.Debug;
 import com.ruthlessphysics.pcalculator.*;
 
-import java.awt.*;
-import javax.swing.*;
-import java.lang.*;
 import java.io.*;
 import java.util.*;
 
@@ -32,7 +29,6 @@ public class Var
     Properties prop = new Properties();
     OutputStream output = null;
     InputStream input = null;
-    String state = "";
     try
     {
       input = new FileInputStream("pcalculator-variables.properties");
@@ -77,7 +73,6 @@ public class Var
     Properties prop = new Properties();
     OutputStream output = null;
     InputStream input = null;
-    String state = "";
     try
     {
       input = new FileInputStream("pcalculator-variables.properties");

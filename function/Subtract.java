@@ -11,13 +11,8 @@
 
 package com.ruthlessphysics.pcalculator.function;
 
-import com.ruthlessphysics.pcalculator.tool.Debug;
+import com.ruthlessphysics.util.Debug;
 import com.ruthlessphysics.pcalculator.tool.Var;
-import com.ruthlessphysics.pcalculator.Header;
-
-import java.awt.*;
-import javax.swing.*;
-import java.lang.*;
 
 public class Subtract
 {

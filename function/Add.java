@@ -14,12 +14,6 @@ package com.ruthlessphysics.pcalculator.function;
 import com.ruthlessphysics.util.Debug;
 import com.ruthlessphysics.pcalculator.tool.Var;
 
-import java.awt.*;
-import javax.swing.*;
-import java.lang.*;
-
-
-
 public class Add
 {
   /* Add

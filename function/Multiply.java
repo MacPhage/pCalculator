@@ -11,11 +11,8 @@
 
 package com.ruthlessphysics.pcalculator.function;
 
-import com.ruthlessphysics.pcalculator.tool.Debug;
+import com.ruthlessphysics.util.Debug;
 
-import java.awt.*;
-import javax.swing.*;
-import java.util.*;
 
 public class Multiply
 {

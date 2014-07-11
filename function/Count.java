@@ -13,12 +13,6 @@ package com.ruthlessphysics.pcalculator.function;
 
 import com.ruthlessphysics.util.Debug;
 
-import java.awt.*;
-import javax.swing.*;
-import java.lang.*;
-import java.io.*;
-import java.util.*;
-
 public class Count
 {
   /* Count
