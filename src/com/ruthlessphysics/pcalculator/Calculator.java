@@ -12,10 +12,12 @@
 package com.ruthlessphysics.pcalculator;
 
 import javax.swing.*;
+
 import java.util.*;
 import java.io.*;
 
 import com.ruthlessphysics.util.Debug;
+import com.ruthlessphysics.util.Version;
 import com.ruthlessphysics.pcalculator.function.*;
 import com.ruthlessphysics.pcalculator.function.simplify.*;
 import com.ruthlessphysics.pcalculator.tool.*;
@@ -31,6 +33,8 @@ public class Calculator
 	"- Plenty under-the-hood changes!\n"+
 	"\n";
 	static String commonType = "information";
+	
+	Version ver = new Version("MacPhage","pCalculator","v1.1.0");
   public static void main(String args[])
   {
 
