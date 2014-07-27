@@ -20,7 +20,7 @@ import com.ruthlessphysics.util.Debug;
 import com.ruthlessphysics.util.Version;
 import com.ruthlessphysics.pcalculator.function.*;
 import com.ruthlessphysics.pcalculator.function.simplify.*;
-import com.ruthlessphysics.pcalculator.tool.*;
+import com.ruthlessphysics.pcalculator.variable.*;
 
 public class Calculator
 {
@@ -38,7 +38,7 @@ public class Calculator
   public static void main(String args[])
   {
 
-    Var.setup();
+    //VariableManager.setup();
 
     boolean debug = false;
 
@@ -150,7 +150,7 @@ public class Calculator
       }
       else if(command.equals("variable") || command.equals("var"))
       {
-        Var.menu(baton);
+        VariableManager.menu(baton);
       }
       else if(command.equals("info"))
       {

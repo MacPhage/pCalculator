@@ -5,6 +5,9 @@
 //
 //  Created by Austin Jackson
 //
+//  Editted with Atom
+//  https://atom.io/
+//
 //  Further updates
 //  http://srchub.org/u/mac
 //
@@ -12,7 +15,6 @@
 package com.ruthlessphysics.pcalculator.function;
 
 import com.ruthlessphysics.util.Debug;
-import com.ruthlessphysics.pcalculator.tool.Var;
 
 public class Subtract
 {
@@ -21,70 +23,32 @@ public class Subtract
   */
   public static String calculate(String[] c) //Input command
   {
-    double var = 0.0;
-    String choose = "default";
-    double r = 0.0; //Result
+    double r; //Result
     try
     {
-      Debug.println("r:"+r+"\n");
-      if(Var.isOccupied(c[0]) && Var.isValidDouble(Var.getVar(c[0])))
-      {
-        var = Var.d(Var.getVar(c[0]));
-        r = var;
-        choose = "var";
-      }
+      r = Double.parseDouble(c[0]); //Result;
     }
     catch (Exception e)
     {
       e.printStackTrace();
-      Debug.displayError(e);
+      return c[0];
     }
-    if(choose.equals("default"))
-    {
-      try
-      {
-        r = Double.parseDouble(c[0]); //Result;
-      }
-      catch (Exception e)
-      {
-        e.printStackTrace();
-        Debug.displayError(e);
-        return c[0];
-      }
-    }
-    choose = "default";
     for(int i = 1; i < c.length; i++)
     {
       //Subtract each number in every index after 0 continuously to form the difference
       try
       {
-        if(Var.isOccupied(c[0]) && Var.isValidDouble(Var.getVar(c[0])))
-        {
-          var = Var.d(Var.getVar(c[0]));
-          r -= var;
-          choose = "var";
-        }
+        r -= Double.parseDouble(c[i]);
       }
       catch (Exception e)
       {
         e.printStackTrace();
-        Debug.displayError(e);
-      }
-
-      if(choose.equals("default"))
-      {
-        try
+        if(Debug.displayDebug())
         {
-          r -= Double.parseDouble(c[i]);
-        }
-        catch (Exception e)
-        {
-          e.printStackTrace();
           Debug.displayError(e);
-          break;
         }
+        break;
       }
-      choose = "default";
     }
     return Double.toString(r);
   }
