@@ -4,7 +4,7 @@ import com.ruthlessphysics.util.Debug;
 
 public class Variable
 {
-	public boolean constant;
+	public boolean constant = false;
 	
 	private String name;
 	private String value;
