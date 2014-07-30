@@ -12,6 +12,7 @@
 package com.ruthlessphysics.pcalculator.variable;
 
 import java.util.List;
+import java.util.Map;
 
 import com.ruthlessphysics.pcalculator.Calculator;
 import com.ruthlessphysics.util.Config;
@@ -83,10 +84,14 @@ public class VariableManager
 	
 	public static void variablesToJSON()
 	{
+		List<String> var = null;
 		for(int i = 0; i < variables.size(); i++)
 		{
-			json_file.json.put(variables.get(i).getName(), variables.get(i).getValue());
+			var.add(variables.get(i).getValue());
+			var.add(variables.get(i).constant.toString());
+			json_file.json.put(variables.get(i).getName(), var);
 		}
+		System.out.println(json_file.json.toJSONString());
 	}
 	
 	public static void jsonToVariables()
