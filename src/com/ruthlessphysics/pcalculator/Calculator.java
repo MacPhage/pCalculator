@@ -48,31 +48,31 @@ public class Calculator
     String command; //Actual command (input[0])
     while(true)
     {
-      if(debug == true)
-      {
-        if(Debug.debugFileExists() == false || baton[0].equals("reset"))
-        {
-          Debug.setDefault();
-        }
-        else if(baton[0].equals("delete"))
-        {
-          try
-          {
-            File fileTemp = new File("pcalculator-debug.properties");
-            if (fileTemp.exists())
-            {
-              fileTemp.delete();
-            }
-          }
-          catch(Exception e)
-          {
-            e.printStackTrace();
-            Debug.displayError(e);
-          }
-        }
-        debug = false;
-      }
-      input[0] = JOptionPane.showInputDialog(null,"Enter a command: ",Debug.defaultCommand());
+//      if(debug == true)
+//      {
+//        if(Debug.debugFileExists() == false || baton[0].equals("reset"))
+//        {
+//          Debug.setDefault();
+//        }
+//        else if(baton[0].equals("delete"))
+//        {
+//          try
+//          {
+//            File fileTemp = new File("pcalculator-debug.properties");
+//            if (fileTemp.exists())
+//            {
+//              fileTemp.delete();
+//            }
+//          }
+//          catch(Exception e)
+//          {
+//            e.printStackTrace();
+//            Debug.displayError(e);
+//          }
+//        }
+//        debug = false;
+//      }
+      input[0] = JOptionPane.showInputDialog(null,"Enter a command: ","help");
       input = input[0].split(" ");
       command = input[0];
       tempList = new ArrayList<String>(Arrays.asList(input));
