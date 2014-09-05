@@ -1,4 +1,4 @@
-<img src="http://ruthlessphysics.com/img/pcalculatorlogo.png" width="600" height="200"></img>
+<img src="http://macphage.github.io/img/pcalculatorlogo.png" width="600" height="200"></img>
 
 <h1>Description</h1>
 pCalculator is a light-weight Java application for convenient calculation.<br>It is designed to do as fully functional and do-all-the-work-for-you as possible.<br><i>Happy mathing!</i>
