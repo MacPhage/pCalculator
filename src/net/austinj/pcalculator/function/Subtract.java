@@ -9,10 +9,9 @@
 //  http://srchub.org/u/mac
 //
 
-package com.ruthlessphysics.pcalculator.function;
+package net.austinj.pcalculator.function;
 
 import com.ruthlessphysics.util.Debug;
-import com.ruthlessphysics.pcalculator.tool.Var;
 
 public class Subtract
 {

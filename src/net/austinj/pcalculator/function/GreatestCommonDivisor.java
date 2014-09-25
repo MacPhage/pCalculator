@@ -1,5 +1,5 @@
 //
-//  LeastCommonMultiple.java
+//  GreatestCommonDivisor.java
 //
 //  Java Source File
 //
@@ -9,15 +9,14 @@
 //  http://srchub.org/u/mac
 //
 
-package com.ruthlessphysics.pcalculator.function;
+package net.austinj.pcalculator.function;
 
 import com.ruthlessphysics.util.Debug;
 
-
-public class LeastCommonMultiple
+public class GreatestCommonDivisor
 {
-  /* LCM
-  // Finds the least common multiple
+  /* GCD
+  // Finds the greatest common divisor
   */
   public static String calculate(String[] c)
   {
@@ -31,11 +30,11 @@ public class LeastCommonMultiple
         {
           l[i] = Long.parseLong(c[i]);
         }
-        r = "Least Common Multiple calculated as:\n"+Long.toString(lcm(l));
+        r = "Greatest Common Divisor calculated as:\n"+Long.toString(gcd(l));
       }
       else
       {
-        r = "Least Common Multiple calculated as:\n"+Long.toString(lcm(Long.parseLong(c[0]),Long.parseLong(c[1])));
+        r = "Greatest Common Divisor calculated as:\n"+Long.toString(gcd(Long.parseLong(c[0]),Long.parseLong(c[1])));
       }
     }
     catch(Exception e)
@@ -47,14 +46,20 @@ public class LeastCommonMultiple
   }
   //Code from: http://stackoverflow.com/questions/4201860/how-to-find-gcf-lcm-on-a-set-of-numbers
   //Thanks internet person!
-  private static long lcm(long a, long b)
+  public static long gcd(long a, long b)
   {
-    return a * (b / GreatestCommonDivisor.gcd(a, b));
+    while (b > 0)
+    {
+      long temp = b;
+      b = a % b; // % is remainder
+      a = temp;
+    }
+    return a;
   }
-  private static long lcm(long[] input)
+  public static long gcd(long[] input)
   {
     long result = input[0];
-    for(int i = 1; i < input.length; i++) result = lcm(result, input[i]);
+    for(int i = 1; i < input.length; i++) result = gcd(result, input[i]);
     return result;
   }
 }

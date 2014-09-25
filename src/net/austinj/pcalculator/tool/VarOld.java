@@ -9,15 +9,16 @@
 //  http://srchub.org/u/mac
 //
 
-package com.ruthlessphysics.pcalculator.tool;
+package net.austinj.pcalculator.tool;
 
 import com.ruthlessphysics.util.Debug;
-import com.ruthlessphysics.pcalculator.*;
 
 import java.io.*;
 import java.util.*;
 
-public class Var
+import net.austinj.pcalculator.*;
+
+public class VarOld
 {
   /* Variable Manager
   // Provides the methods to manage variables

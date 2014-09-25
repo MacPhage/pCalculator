@@ -9,18 +9,19 @@
 //  http://srchub.org/u/mac
 //
 
-package com.ruthlessphysics.pcalculator;
+package net.austinj.pcalculator;
 
 import javax.swing.*;
+
+import net.austinj.pcalculator.function.*;
+import net.austinj.pcalculator.function.simplify.*;
+import net.austinj.pcalculator.tool.*;
 
 import java.util.*;
 import java.io.*;
 
 import com.ruthlessphysics.util.Debug;
 import com.ruthlessphysics.util.Version;
-import com.ruthlessphysics.pcalculator.function.*;
-import com.ruthlessphysics.pcalculator.function.simplify.*;
-import com.ruthlessphysics.pcalculator.tool.*;
 
 public class Calculator
 {
@@ -38,7 +39,7 @@ public class Calculator
   public static void main(String args[])
   {
 
-    Var.setup();
+    VarOld.setup();
 
     boolean debug = false;
 
@@ -150,7 +151,7 @@ public class Calculator
       }
       else if(command.equals("variable") || command.equals("var"))
       {
-        Var.menu(baton);
+        VarOld.menu(baton);
       }
       else if(command.equals("info"))
       {

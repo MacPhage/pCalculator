@@ -9,10 +9,11 @@
 //  http://srchub.org/u/mac
 //
 
-package com.ruthlessphysics.pcalculator.function.simplify;
+package net.austinj.pcalculator.function.simplify;
+
+import net.austinj.pcalculator.function.*;
 
 import com.ruthlessphysics.util.Debug;
-import com.ruthlessphysics.pcalculator.function.*;
 
 public class Fraction
 {

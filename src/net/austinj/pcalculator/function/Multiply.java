@@ -1,26 +1,28 @@
 //
-//  Power.java
+//  Multiply.java
 //
 //  Java Source File
 //
-//  Created by Austin Jackson,
+//  Created by Austin Jackson
 //
 //  Further updates
 //  http://srchub.org/u/mac
 //
 
-package com.ruthlessphysics.pcalculator.function;
+package net.austinj.pcalculator.function;
 
 import com.ruthlessphysics.util.Debug;
 
-public class Power
+
+public class Multiply
 {
-  /* Power
-  // Raises each number in the current index to the power of the next
+  /* Multiply
+  // Finds the product of all the items in the given array
   */
   public static String calculate(String[] c)
   {
     double r; //Result
+    String m = "The product of "+c[0]+", ";
     try
     {
       r = Double.parseDouble(c[0]); //Result;
@@ -36,7 +38,7 @@ public class Power
       //Adds each number in every index together to form the sum
       try
       {
-        r = Math.pow(r,Double.parseDouble(c[i]));
+        r *= Double.parseDouble(c[i]);
       }
       catch (Exception e)
       {
@@ -44,9 +46,21 @@ public class Power
         Debug.displayError(e);
         break;
       }
+      if(c.length-i == 2) //Make a message of the end result while it's being calculated
+      {
+        m += c[i]+", and ";
+      }
+      else if(c.length-i == 1)
+      {
+        m += c[i];
+      }
+      else
+      {
+        m += c[i]+", ";
+      }
     }
-    return Double.toString(r);
+    m += " equals "+r;
+    return m;
   }
-
 
 }

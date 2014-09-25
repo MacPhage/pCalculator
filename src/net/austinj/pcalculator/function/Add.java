@@ -9,10 +9,11 @@
 //  http://srchub.org/u/mac
 //
 
-package com.ruthlessphysics.pcalculator.function;
+package net.austinj.pcalculator.function;
+
+import net.austinj.pcalculator.tool.VarOld;
 
 import com.ruthlessphysics.util.Debug;
-import com.ruthlessphysics.pcalculator.tool.Var;
 
 public class Add
 {
@@ -30,9 +31,9 @@ public class Add
       //Adds each number in every index together to form the sum
       try
       {
-        if(Var.isOccupied(c[i]) && Var.isValidDouble(Var.getVar(c[i])))
+        if(VarOld.isOccupied(c[i]) && VarOld.isValidDouble(VarOld.getVar(c[i])))
         {
-          var = Var.d(Var.getVar(c[i]));
+          var = VarOld.d(VarOld.getVar(c[i]));
           r += var;
           choose = "var";
         }

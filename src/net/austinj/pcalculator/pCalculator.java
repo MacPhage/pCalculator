@@ -1,4 +1,4 @@
-package com.ruthlessphysics.pcalculator;
+package net.austinj.pcalculator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,20 +6,21 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-import com.ruthlessphysics.pcalculator.function.Add;
-import com.ruthlessphysics.pcalculator.function.Count;
-import com.ruthlessphysics.pcalculator.function.Divide;
-import com.ruthlessphysics.pcalculator.function.Factorial;
-import com.ruthlessphysics.pcalculator.function.GreatestCommonDivisor;
-import com.ruthlessphysics.pcalculator.function.LeastCommonMultiple;
-import com.ruthlessphysics.pcalculator.function.Multiply;
-import com.ruthlessphysics.pcalculator.function.NRoot;
-import com.ruthlessphysics.pcalculator.function.Power;
-import com.ruthlessphysics.pcalculator.function.QuadraticFormula;
-import com.ruthlessphysics.pcalculator.function.Squareroot;
-import com.ruthlessphysics.pcalculator.function.Subtract;
-import com.ruthlessphysics.pcalculator.function.simplify.Fraction;
-import com.ruthlessphysics.pcalculator.tool.Var;
+import net.austinj.pcalculator.function.Add;
+import net.austinj.pcalculator.function.Count;
+import net.austinj.pcalculator.function.Divide;
+import net.austinj.pcalculator.function.Factorial;
+import net.austinj.pcalculator.function.GreatestCommonDivisor;
+import net.austinj.pcalculator.function.LeastCommonMultiple;
+import net.austinj.pcalculator.function.Multiply;
+import net.austinj.pcalculator.function.NRoot;
+import net.austinj.pcalculator.function.Power;
+import net.austinj.pcalculator.function.QuadraticFormula;
+import net.austinj.pcalculator.function.Squareroot;
+import net.austinj.pcalculator.function.Subtract;
+import net.austinj.pcalculator.function.simplify.Fraction;
+import net.austinj.pcalculator.tool.VarOld;
+
 import com.ruthlessphysics.util.Debug;
 
 public class pCalculator 
@@ -150,7 +151,7 @@ public class pCalculator
 			      }
 			      else if(command.equals("variable") || command.equals("var"))
 			      {
-			        Var.menu(baton);
+			        VarOld.menu(baton);
 			      }
 			      else if(command.equals("info"))
 			      {
