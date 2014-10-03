@@ -3,15 +3,13 @@
 //
 //  Java Source File
 //
-//  Created by Austin Jackson,
-//
-//  Further updates
-//  http://srchub.org/u/mac
+//  Created by Austin Jackson
+//  http://austinj.net/
 //
 
 package net.austinj.pcalculator.function;
 
-import com.ruthlessphysics.util.Debug;
+import net.austinj.pcalculator.tool.Interface;
 
 public class Squareroot
 {
@@ -32,8 +30,7 @@ public class Squareroot
     }
     catch(Exception e)
     {
-      e.printStackTrace();
-      Debug.displayError(e);
+      Interface.logError(e);
     }
     return r;
   }

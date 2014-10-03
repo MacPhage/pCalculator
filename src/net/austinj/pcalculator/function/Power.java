@@ -3,15 +3,13 @@
 //
 //  Java Source File
 //
-//  Created by Austin Jackson,
-//
-//  Further updates
-//  http://srchub.org/u/mac
+//  Created by Austin Jackson
+//  http://austinj.net/
 //
 
 package net.austinj.pcalculator.function;
 
-import com.ruthlessphysics.util.Debug;
+import net.austinj.pcalculator.tool.Interface;
 
 public class Power
 {
@@ -27,8 +25,7 @@ public class Power
     }
     catch (Exception e)
     {
-      e.printStackTrace();
-      Debug.displayError(e);
+      Interface.logError(e);
       return c[0];
     }
     for(int i = 1; i < c.length; i++)
@@ -40,8 +37,7 @@ public class Power
       }
       catch (Exception e)
       {
-        e.printStackTrace();
-        Debug.displayError(e);
+        Interface.logError(e);
         break;
       }
     }

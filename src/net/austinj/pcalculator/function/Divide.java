@@ -4,54 +4,35 @@
 //  Java Source File
 //
 //  Created by Austin Jackson
-//
-//  Further updates
-//  http://srchub.org/u/mac
+//  http://austinj.net/
 //
 
 package net.austinj.pcalculator.function;
 
-import com.ruthlessphysics.util.Debug;
+import net.austinj.pcalculator.tool.Interface;
 
 
 
 public class Divide
 {
-  /* Divide
-  // Finds the quotient of all the items in the given array
-  */
-  public static String calculate(String[] c)
-  {
-    double r; //Result
-    try
-    {
-      r = Double.parseDouble(c[0]); //Result;
-    }
-    catch (Exception e)
-    {
-      e.printStackTrace();
-      Debug.displayError(e);
-      return c[0];
-    }
-
-    for(int i = 1; i < c.length; i++)
-    {
-      //Adds each number in every index together to form the sum
-      try
-      {
-
-        r /= Double.parseDouble(c[i]);
-      }
-      catch (Exception e)
-      {
-        e.printStackTrace();
-        Debug.displayError(e);
-        break;
-      }
-    }
-    return Double.toString(r);
-  }
-
-
-
+/* Divide
+// Finds the quotient of all the items in the given array
+*/
+	public static String calculate(String[] c) //Input command
+	{
+		double r = 0; //Result
+		for(int i = 0; i < c.length; i++)
+		{
+			try
+			{
+				r += Double.parseDouble(c[i]);
+			}
+			catch (Exception e)
+			{
+				Interface.logError(e);
+			}
+		}
+		return Double.toString(r);
+	}
 }
+

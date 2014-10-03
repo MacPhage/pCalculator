@@ -4,14 +4,12 @@
 //  Java Source File
 //
 //  Created by Austin Jackson
-//
-//  Further updates
-//  http://srchub.org/u/mac
+//  http://austinj.net/
 //
 
 package net.austinj.pcalculator.function;
 
-import com.ruthlessphysics.util.Debug;
+import net.austinj.pcalculator.tool.Interface;
 
 public class Subtract
 {
@@ -30,9 +28,7 @@ public class Subtract
 			}
 			catch (Exception e)
 			{
-				e.printStackTrace();
-				Debug.displayError(e);
-				break;
+				Interface.logError(e);
 			}
 		}
 		return Double.toString(r);

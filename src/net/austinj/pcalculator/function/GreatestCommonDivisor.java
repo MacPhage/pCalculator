@@ -4,14 +4,13 @@
 //  Java Source File
 //
 //  Created by Austin Jackson
-//
-//  Further updates
-//  http://srchub.org/u/mac
+//  http://austinj.net/
 //
 
 package net.austinj.pcalculator.function;
 
-import com.ruthlessphysics.util.Debug;
+import net.austinj.pcalculator.tool.Interface;
+
 
 public class GreatestCommonDivisor
 {
@@ -39,8 +38,7 @@ public class GreatestCommonDivisor
     }
     catch(Exception e)
     {
-      e.printStackTrace();
-      Debug.displayError(e);
+      Interface.logError(e);
     }
     return r;
   }
