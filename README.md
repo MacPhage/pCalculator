@@ -1,13 +1,13 @@
 <img src="http://i.imgur.com/lFW85GW.png" width="300" height="100"></img>
 
-#Description
+##Description
 
 pCalculator is a light-weight Java application for convenient calculation.
 It is designed to do as fully functional and do-all-the-work-for-you as possible.
 
 *Happy mathing!*
 
-#Commands
+##Commands
 ###Guide
 - List = multiple inputs seperated by spaces.
 - Commands ARE case-sensitive! Typing "add" is different from "ADD".

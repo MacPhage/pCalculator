@@ -138,7 +138,25 @@ public class VariableManager
 	
 	public static void menu(String[] c)
 	{
-		//
+		boolean hasArgs;
+		try
+		{
+			String k = c[0];
+			if(k.toLowerCase().equals("set") || k.toLowerCase().equals("remove") || k.toLowerCase().equals("write") || k.toLowerCase().equals("read"))
+			{
+				hasArgs = true;
+			}
+			else
+			{
+				hasArgs = false;
+			}
+		}
+		catch(Exception e)
+		{
+			hasArgs = false;
+		}
+		
+		//Provide do stuff based on args, or provide a menu for doing so.
 	}
 
 }
