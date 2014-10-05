@@ -13,6 +13,7 @@ It is designed to do as fully functional and do-all-the-work-for-you as possible
 - Commands ARE case-sensitive! Typing "add" is different from "ADD".
 - Things with [] are required.
 - Things with () are optional.
+
 ###Command list
 - Help
   - Use "help"
