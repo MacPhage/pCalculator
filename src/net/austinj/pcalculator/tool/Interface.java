@@ -31,13 +31,13 @@ public class Interface
 	public static void logError(Exception e)
 	{
 		String detailed = "[ERROR At "+(System.currentTimeMillis()*1000)+" ]\n"
-				+ "  LocalizedMessage: \n    "+e.getLocalizedMessage()
-				+ "  Message: \n    "+e.getMessage()
-				+ "  StackTrace: \n    "+e.getStackTrace()
-				+ "\n";
+				+ "  LocalizedMessage: \n    "+e.getLocalizedMessage()+"\n"
+				+ "  Message: \n    "+e.getMessage()+"\n"
+				+ "  StackTrace: \n    ";
 		if(pCalculator.debugging)
 		{
-			System.out.println(detailed);
+			System.err.println(detailed);
+			e.printStackTrace();
 		}
 		else
 		{
@@ -70,17 +70,17 @@ public class Interface
 	{
 		System.out.println(m);
 	}
-	
-	
-//	public static void showInfo()
-//	{
-//		//
-//	}
-//	public static void showCommands()
-//	{
-//		//
-//	}
-	
+	public static void pause()
+	{
+		//boolean flag = false;
+		System.out.println("Press Enter/Return to continue...");
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
+	}
 	public static void showInfo()
 	  {
 	    alert(
@@ -92,9 +92,22 @@ public class Interface
 	    "Source code: http://github.com/MacPhage/pCalculator\n"+
 	    "Changes in this version: \n"+changes);
 	  }
-	  public static void showCommands()
-	  {
-	    alert(
+	public static void showCommands()
+	{
+		//Woot, just like the trusty C++ version!
+		alert(""
+				+ "Now showing BASIC MATH functions.\n"
+				+ "  To perform addition, type \'add\' without quotes.\n"
+				+ "  To perform subtraction, type \'subtract\' without quotes.\n"
+				+ "  To perform multiplication, type \'multiply\' without quotes.\n"
+				+ "  To perform division, type \'divide\' without quotes.\n"
+				+ "  To perform exponents, type \'power\' without quotes.\n"
+				+ "  To perform squareroot, type \'squareroot\' without quotes.\n"
+				+ "  To perform factorials, type \'factorial\' without quotes.\n");
+	}
+	public static void showHelp()
+	{
+		alert(
 	    "Guide:\n"+
 	    "- List = multiple inputs seperated by spaces\n"+
 	    "- Commands ARE case-sensitive! Typing \"add\" is different from \"ADD\"\n"+
@@ -138,6 +151,6 @@ public class Interface
 	    "  - Allows you to store constants for mathematical use later.\n"+
 	    "  - Values stored in \'pcalculator-variables.properties\' and are editable.\n"+
 	    "\n");
-	  }
+	}
 
 }

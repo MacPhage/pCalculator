@@ -12,6 +12,8 @@ package net.austinj.pcalculator;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.swing.JOptionPane;
+
 import net.austinj.pcalculator.function.Add;
 import net.austinj.pcalculator.function.Count;
 import net.austinj.pcalculator.function.Divide;
@@ -46,16 +48,18 @@ public class pCalculator
 			if(!args[0].isEmpty())
 			{
 				inputMode = "CLI";
-			}
-			
-			if(checkForArgument(args,"--debug"))
-			{
-				debugging = true;
+				
+				if(checkForArgument(args,"--debug"))
+				{
+					debugging = true;
+				}
 			}
 		}
 		catch(Exception e)
 		{
+			JOptionPane.showMessageDialog(null, "pCalculator, currently, is only a command-line application.\nTry using an older version instead, or wait for the next version.\nTo use it by the commandline, use java -jar pCalculator.jar. If you don\'t know how to do that I\'m sorry.");
 			inputMode = "GUI";
+			System.exit(0);
 		}
 		//Temporary
 		inputMode = "CLI";
@@ -63,7 +67,10 @@ public class pCalculator
 		
 		while(true)
 		{
-			input[0] = Interface.promptLine("Enter command: ");
+			
+			Interface.showCommands();
+			
+			input[0] = Interface.promptLine("Choose operation: ");
 		    input = input[0].split(" ");
 		    command = input[0];
 		    tempList = new ArrayList<String>(Arrays.asList(input));
@@ -134,7 +141,7 @@ public class pCalculator
 			}
 			else if(command.equals("?") || command.equals("help"))
 			{
-				Interface.showCommands();
+				Interface.showHelp();
 			}
 			else if(command.equals("quit") || command.equals("stop") || command.equals("end") || command.equals("close"))
 			{
@@ -151,6 +158,10 @@ public class pCalculator
 			else
 			{
 				Interface.alert("That wasn\'t a valid command.");
+			}
+			if(inputMode.equals("CLI"))
+			{
+				Interface.pause();
 			}
 		}
 		System.exit(0);

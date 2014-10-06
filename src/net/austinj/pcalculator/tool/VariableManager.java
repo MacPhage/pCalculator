@@ -15,38 +15,27 @@ public class VariableManager
 	public static List<Variable> variables = new ArrayList<Variable>();
 
 	
-	public static void add(Variable v)
+	public static void set(Variable v) throws Exception //Replaces variables with the name
 	{
-		if(!checkForVariableById(v.getId()))
+		if(!checkForVariableById(v.getId())) //If a previous variable isn't found
 		{
 			variables.add(v);
 		}
 		else
 		{
-			while(true)
-			{
-				String s = Interface.prompt("A variable is with the ID \'"+v.getId()+"\' already exists.\nOverwrite? y/n");
-				if(s.toLowerCase().charAt(0) == 'y')
-				{
-					try
-					{
-						remove(v.getId());
-						variables.add(v);
-					}
-					catch(Exception e)
-					{
-						Interface.logError(e);
-					}
-				}
-				else if(s.toLowerCase().charAt(0) == 'n')
-				{
-					break;
-				}
-				else
-				{
-					Interface.alert("That wasn\'t a valid answer.");
-				}
-			}
+			remove(v.getId());
+			variables.add(v);
+		}
+	}
+	public static void add(Variable v) throws Exception //Attempts to add variable with a name
+	{
+		if(!checkForVariableById(v.getId())) //If a previous variable isn't found
+		{
+			variables.add(v);
+		}
+		else
+		{
+			throw new Exception("A variable was already found with that ID.");
 		}
 	}
 	
@@ -142,7 +131,7 @@ public class VariableManager
 		try
 		{
 			String k = c[0];
-			if(k.toLowerCase().equals("set") || k.toLowerCase().equals("remove") || k.toLowerCase().equals("write") || k.toLowerCase().equals("read"))
+			if(k.toLowerCase().equals("add") || k.toLowerCase().equals("set") || k.toLowerCase().equals("remove") || k.toLowerCase().equals("write") || k.toLowerCase().equals("read") || k.toLowerCase().equals("get"))
 			{
 				hasArgs = true;
 			}
@@ -157,6 +146,18 @@ public class VariableManager
 		}
 		
 		//Provide do stuff based on args, or provide a menu for doing so.
+		
+		if(hasArgs)
+		{
+			if(c[0].equals("help"))
+			{
+				//
+			}
+			else if(c[0].equals("set"))
+			{
+				//
+			}
+		}
 	}
 
 }
