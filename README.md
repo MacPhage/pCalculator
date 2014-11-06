@@ -1,3 +1,60 @@
+
+<style>
+.announcement {
+  font-size: 96px;
+}
+
+.blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transition: color 0.5s;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    -moz-transition: color 0.5s;
+        
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transition: color 0.5s;
+}
+
+@-moz-keyframes blinker {  
+    0% { color: #ef7c7c; }
+    25% { opacity: #f24444; }
+    50% { opacity: #ef2a2a; }
+    75% { opacity: #f24444; }
+    100% { opacity: #ef7c7c; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { color: #ef7c7c; }
+    25% { opacity: #f24444; }
+    50% { opacity: #ef2a2a; }
+    75% { opacity: #f24444; }
+    100% { opacity: #ef7c7c; }
+}
+
+@keyframes blinker {  
+    0% { color: #ef7c7c; }
+    25% { opacity: #f24444; }
+    50% { opacity: #ef2a2a; }
+    75% { opacity: #f24444; }
+    100% { opacity: #ef7c7c; }
+}
+</style>
+
+<p class="announcement blink_me">pCalculator as a project is going currently inactive, however, a JavaScript port/revamp is being developed over at <a href="https://github.com/MacPhage/alfeo">MacPhage/alfeo</a></p>
+
 <img src="http://macphage.github.io/img/pcalculatorlogo.png" width="600" height="200"></img>
 
 <h1>Description</h1>
