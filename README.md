@@ -1,4 +1,4 @@
-<h1>pCalculator as a project is going currently inactive, however, a JavaScript port and revamp is being developed over at <a href="https://github.com/MacPhage/alfeo">MacPhage/alfeo</a></h1>
+
 
 <img src="http://macphage.github.io/img/pcalculatorlogo.png" width="600" height="200"></img>
 
